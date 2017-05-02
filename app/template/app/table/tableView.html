@@ -1,24 +1,71 @@
-<section class="table-list" ng-class="{'selectOn': (vm.table.selectedRowsCount() > 0)}">
-	<header class="action-bar">
-		<div class="col-sm-6 title">
-			<div class="selector" ng-click="vm.table.toggleSelectAll()" ng-class="{'selected' : vm.table.areAllRowsSelected()}"></div>
-			<span>Zaznaczono ( {{vm.table.selectedRowsCount()}} ) elementów</span>
+<header class="col-12 content-forms">
+	<div class="row form-elements">
+		<div class="col-9"><h3>Lista pracowników</h3>
+			<p class="gray">Lista potencjalnych pracowników, którzy powinni zostać nagrodzeni</p>
 		</div>
-	</header>
-	<article class="table-responsive">
-		<table spinner="{{vm.SpinnerKey.TABLE}}" ng-table="vm.table.toNgTableParams()" class="table">
-			<tr class="heading">
-				<th align="left">
-					<div class="selector select-all" ng-click="vm.table.toggleSelectAll()" ng-class="{'selected' : vm.table.areAllRowsSelected()}"></div>
-				</th>
-				<th ng-repeat="column in vm.table.getColumns()" align="left" ng-click="vm.toggleOrder(column.id)">
-					<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''" class="fa"></i>{{column.name}}
-				</th>
+		<div class="col-3 column-status">
+			<p class="element-count">
+				<span>23</span> osoby
+			</p>
+		</div>
+	</div>
+</header>
+<nav class="row nav-content">
+	<ul class="nav nav-primary nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link">
+				<i class="fa fa-download"></i>
+				Exportuj
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link">
+				<i class="fa fa-upload"></i>
+				Importuj
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link">
+				<i class="fa fa-plus"></i>
+				Dodaj pracownika
+			</a>
+		</li>
+	</ul>
+</nav>
+<article class="col-sm-12 table-horizontal">
+	<div class="row">
+		<table class="table"
+		       ng-table="vm.table.toNgTableParams()"
+		       spinner="{{vm.SpinnerKey.TABLE}}">
+			<thead>
+				<tr>
+					<th ng-repeat="column in vm.table.getColumns()">
+						{{column.name}}
+					</th>
+					<th>Akcje</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="entry in $data">
+				<td ng-repeat="column in vm.table.getColumns()">
+					<p>{{entry[column.id]}}</p>
+				</td>
+				<td>
+					<div class="more more-vertical nav-hoover">
+						<span class="dot"></span>
+						<span class="dot">
+							<div class="btn-holder">
+								<div class="btn-group">
+									<a class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+									<a class="btn btn-primary"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+						</span>
+						<span class="dot"></span>
+					</div>
+				</td>
 			</tr>
-			<tr ng-repeat="entry in $data" ng-class="{'selected': vm.table.isRowSelected(entry.id)}">
-				<td><div class="selector" ng-click="vm.table.toggleSelect(entry.id)"></div></td>
-				<td ng-repeat="column in vm.table.getColumns()">{{entry[column.id]}}</td>
-			</tr>
+			</tbody>
 		</table>
-	</article>
-</section>
+	</div>
+</article>

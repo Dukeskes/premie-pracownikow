@@ -7,3 +7,5 @@ Database.users = [
 	new User(2, 'admin', '123'),
 	new User(3, 'test', '123')
 ];
+
+Database.workers = [];

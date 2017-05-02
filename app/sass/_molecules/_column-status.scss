@@ -13,4 +13,21 @@
 	.dot-status {
 		margin-right: .75em;
 	}
+	.element-count {
+		color: $green-dark;
+		padding-right: .5em;
+		padding-top: .5em;
+		padding-bottom: .5em;
+		margin-bottom: 0;
+		font-weight: 400;
+		font-size: 1rem;
+		span {
+			background: $green;
+			padding: .4em;
+			color: $green-lighter;
+			margin-right: .5em;
+			font-weight: 100;
+			font-size: 1rem;
+		}
+	}
 }
