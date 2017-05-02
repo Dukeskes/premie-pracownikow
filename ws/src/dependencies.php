@@ -1,6 +1,7 @@
 <?php
 // DIC configuration
 
+require_once( __dir__ . "/../class/Worker.php" );
 require_once( __dir__ . "/../controllers/WorkerController.php" );
 
 $container = $app->getContainer();
