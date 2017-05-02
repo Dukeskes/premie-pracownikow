@@ -5,12 +5,14 @@
 // Date: 18.08.2016
 // Dependencies:
 // ------------------------------------------------------------
-main {
+#app {
 	background: $background-color;
-	padding-top: $spacer;
-	min-height: 100vh;
-	> .content {
-		padding-left: 4em;
-		padding-right: 5em;
+	main {
+		padding-top: $spacer;
+		min-height: 100vh;
+		> .content {
+			padding-left: 4em;
+			padding-right: 5em;
+		}
 	}
 }

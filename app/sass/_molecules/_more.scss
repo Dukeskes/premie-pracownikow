@@ -10,14 +10,13 @@
 	&.more-vertical {
 		.dot {
 			display: block;
-			width: 0.125rem;
-			height: 0.125rem;
+			width: 0.1875rem;
+			height: 0.1875rem;
+			margin-right: auto;
+			margin-left: auto;
 			margin-bottom: .15rem;
-			@include border-radius(50%);
+			border-radius: 50%;
 			background: $gray-dark;
-		}
-		&:hover {
-
 		}
 	}
 	&.more-horizontal {

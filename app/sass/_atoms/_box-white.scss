@@ -8,9 +8,8 @@
 .box-white {
 	background: $white;
 	@include border-radius(.25em);
-	border: .1em solid $blue-lightest;
+	border: .1em solid $green;
 	margin-bottom: $spacer;
-	box-shadow: 2px 0px 4px 2px rgba(233,239,244,1);
 	&.content-forms {
 		padding: 2em;
 	}
