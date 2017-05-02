@@ -1,0 +1,24 @@
+<section class="table-list" ng-class="{'selectOn': (vm.table.selectedRowsCount() > 0)}">
+	<header class="action-bar">
+		<div class="col-sm-6 title">
+			<div class="selector" ng-click="vm.table.toggleSelectAll()" ng-class="{'selected' : vm.table.areAllRowsSelected()}"></div>
+			<span>Zaznaczono ( {{vm.table.selectedRowsCount()}} ) elementów</span>
+		</div>
+	</header>
+	<article class="table-responsive">
+		<table spinner="{{vm.SpinnerKey.TABLE}}" ng-table="vm.table.toNgTableParams()" class="table">
+			<tr class="heading">
+				<th align="left">
+					<div class="selector select-all" ng-click="vm.table.toggleSelectAll()" ng-class="{'selected' : vm.table.areAllRowsSelected()}"></div>
+				</th>
+				<th ng-repeat="column in vm.table.getColumns()" align="left" ng-click="vm.toggleOrder(column.id)">
+					<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''" class="fa"></i>{{column.name}}
+				</th>
+			</tr>
+			<tr ng-repeat="entry in $data" ng-class="{'selected': vm.table.isRowSelected(entry.id)}">
+				<td><div class="selector" ng-click="vm.table.toggleSelect(entry.id)"></div></td>
+				<td ng-repeat="column in vm.table.getColumns()">{{entry[column.id]}}</td>
+			</tr>
+		</table>
+	</article>
+</section>

@@ -1,47 +1,33 @@
 {
-  "name": "ansport",
-  "description": "Sport organization app",
-  "main": "",
-  "authors": [
-    "BartekDukes <bartek@dukes.pl>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "ansport"
-  ],
-  "homepage": "https://github.com/Dukeskes/ansport",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components"
-  ],
-  "moduleType": [
-    "globals"
-  ],
-  "dependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
-    "angular": "~1.4.7",
-    "angular-ui-router": "ui-router#~0.2.15",
-    "jquery": "~2.1.4",
-    "bootstrap": "4.0.0-alpha.2",
-    "font-awesome": "fontawesome#~4.4.0",
-    "animate.css": "~3.4.0",
-    "angular-cookies": "~1.4.8",
-    "ng-table": "~0.8.3",
-    "ui-select": "angular-ui-select#~0.13.2",
-    "ng-dialog": "~0.5.6",
-    "angular-bootstrap": "~1.1.0",
-    "AngularJS-Toaster": "^2.0.0",
-    "angular-translate": "^2.11.0",
-    "angular-translate-loader-static-files": "^2.11.0",
-    "tether": "^1.3.3"
-  },
-  "devDependencies": {
-    "angular-mocks": "~1.4.7"
-  },
-  "resolutions": {
-    "angular": "~1.4.7",
-    "tether": "^1.3.3"
-  }
+	"name": "angular-template",
+	"description": "Angular template",
+	"main": "index.js",
+	"authors": [
+		"Michal Klekotko <michal.klekotko@ensteam.com>"
+	],
+	"license": "MIT",
+	"moduleType": [
+		"globals"
+	],
+	"homepage": "",
+	"private": true,
+	"dependencies": {
+		"angular": "~1.5.8",
+		"angular-ui-router": "ui-router#~0.2.15",
+		"jquery": "~2.1.4",
+		"bootstrap": "4.0.0-alpha",
+		"font-awesome": "fontawesome#~4.4.0",
+		"animate.css": "~3.4.0",
+		"angular-cookies": "~1.5.8",
+		"ng-table": "^1.0.0",
+		"angular-bootstrap": "~2.0.1",
+		"AngularJS-Toaster": "^2.0.0",
+		"angular-translate": "^2.11.0",
+		"angular-translate-loader-static-files": "^2.11.0",
+		"include-media": "^1.4.8",
+		"angular-ui-select": "^0.19.1"
+	},
+	"devDependencies": {
+		"angular-mocks": "~1.5.8"
+	}
 }

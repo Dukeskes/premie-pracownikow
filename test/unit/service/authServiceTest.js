@@ -14,11 +14,12 @@ describe('Auth service ', function() {
 		delete $http.defaults.headers.common[CookieToken.AUTH];
 		$cookies.remove(CookieToken.AUTH);
 		$cookies.remove(CookieToken.ROLE);
+		$cookies.remove(CookieToken.USER);
 	}));
 
 	it('should store and remove auth token in cookies', function() {
 		$httpBackend.whenPOST('ws/auth/logIn').respond(function() {
-			return [ResponseCode.OK, new UserPrincipal(1, Role.ADMIN, 'hello_world')];
+			return [ResponseCode.OK, new UserPrincipal(1, Role.ADMIN, 'hello_world', 'test')];
 		});
 		$httpBackend.whenPOST('ws/auth/logOut').respond(function() {
 			return [ResponseCode.OK, {}];
@@ -26,10 +27,12 @@ describe('Auth service ', function() {
 
 		expect($cookies.get(CookieToken.AUTH)).toBeUndefined();
 		expect($cookies.get(CookieToken.ROLE)).toBeUndefined();
+		expect($cookies.get(CookieToken.USER)).toBeUndefined();
 
 		service.logIn('hello', 'world').then(function() {
 			expect($cookies.get(CookieToken.AUTH)).toBeDefined();
 			expect($cookies.get(CookieToken.ROLE)).toBeDefined();
+			expect($cookies.get(CookieToken.USER)).toBeDefined();
 		}, function() {
 			fail('should succeed');
 		});
@@ -37,6 +40,7 @@ describe('Auth service ', function() {
 		service.logOut().then(function() {
 			expect($cookies.get(CookieToken.AUTH)).toBeUndefined();
 			expect($cookies.get(CookieToken.ROLE)).toBeUndefined();
+			expect($cookies.get(CookieToken.USER)).toBeUndefined();
 		}, function() {
 			fail('should succeed');
 		});
@@ -56,5 +60,13 @@ describe('Auth service ', function() {
 			fail('should succeed');
 		});
 		$httpBackend.flush();
+	});
+
+	it('should have authorization for each state', function() {
+		for(var token in State.Token) {
+			expect(function() {
+				service.isStateAllowed(State.Token[token]);
+			}).not.toThrow();
+		}
 	});
 });

@@ -1,0 +1,39 @@
+<section>
+	<div class="col-sm-12">
+		<button spinner="{{vm.SpinnerKey.BUTTON}}" ng-click="vm.start()" class="btn btn-default">Start!</button>
+		<button ng-click="vm.stop()" class="btn btn-default">Stop</button>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<ui-select ui-select-input-class="btn btn-primary" spinner="{{vm.SpinnerKey.SELECT}}" ng-model="vm.fooBars.selected">
+				<ui-select-match placeholder="Wybierz sobie coś">{{$select.selected}}</ui-select-match>
+				<ui-select-choices repeat="item in (vm.fooBars.available | filter: $select.search)">{{item}}</ui-select-choices>
+			</ui-select>
+		</div>
+		<div class="col-sm-6">
+			<ui-select ui-select-input-class="btn btn-default" spinner="{{vm.SpinnerKey.PRIMARY_SELECT}}" ng-model="vm.primaryFooBars.selected">
+				<ui-select-match placeholder="Wybierz coś innego">{{$select.selected}}</ui-select-match>
+				<ui-select-choices repeat="item in (vm.primaryFooBars.available | filter: $select.search)">{{item}}</ui-select-choices>
+			</ui-select>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<section spinner="{{vm.SpinnerKey.SECTION}}" class="text-center">Jakaś tam sobie sekcja</section>
+	</div>
+	<div class="col-sm-12">
+		<table ng-table="vm.table.toNgTableParams()" class="table">
+			<thead>
+				<tr class="heading">
+					<th ng-repeat="column in vm.table.getColumns()" align="left" ng-click="vm.toggleOrder(column.id)">
+						<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''" class="fa"></i>{{column.name}}
+					</th>
+				</tr>
+			</thead>
+			<tbody spinner="{{vm.SpinnerKey.TABLE}}">
+				<tr ng-repeat="entry in $data">
+					<td ng-repeat="column in vm.table.getColumns()">{{entry[column.id]}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>

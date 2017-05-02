@@ -1,0 +1,39 @@
+{
+	"ERROR.UNKNOWN": "Wystąpił błąd",
+	"ERROR.WRONG_CREDENTIALS": "Błędne dane",
+	"ERROR.USERNAME_ALREADY_EXISTS": "Użytkownik już istnieje",
+
+	"STATE.LOGIN": "Logowanie",
+	"STATE.REGISTRATION": "Rejestracja",
+	"STATE.APP": "App",
+	"STATE.DASHBOARD": "Pulpit",
+	"STATE.DIALOG": "Dialogi",
+	"STATE.SPINNER": "Kręcioły",
+	"STATE.TABLE": "Tabela",
+	"STATE.ERROR": "Błąd",
+
+	"APP.TITLE": "Template",
+	"APP.LOGOUT": "Wyloguj",
+	"APP.OK": "Ok",
+	"APP.CLOSE": "Zamknij",
+
+	"LOGIN.TITLE": "Logowanie",
+	"LOGIN.USERNAME": "Login",
+	"LOGIN.PASSWORD": "Hasło",
+	"LOGIN.REMEMBER_PASSWORD": "Pamiętaj hasło",
+	"LOGIN.REGISTRATION": "Rejestracja",
+	"LOGIN.APPLY": "Zaloguj",
+
+	"REGISTRATION.TITLE": "Rejestracja",
+	"REGISTRATION.USERNAME": "Login",
+	"REGISTRATION.PASSWORD": "Hasło",
+	"REGISTRATION.LOGIN": "Logowanie",
+	"REGISTRATION.APPLY": "Zarejestruj",
+
+	"CONFIRM_DIALOG.TITLE": "Potwierdzenie",
+
+    "ROTATE_DEVICE.TITLE": "Obróć urządzenie",
+    "ROTATE_DEVICE.RESOLUTION": "minimalna obsługiwana rozdzielczość - 1024x768",
+    "UNSUPPORTED_DEVICE.TITLE": "Twoja rozdzielczość jest nieobsługiwana",
+    "UNSUPPORTED_DEVICE.RESOLUTION": "minimalna obsługiwana rozdzielczość - 1024x768"
+}

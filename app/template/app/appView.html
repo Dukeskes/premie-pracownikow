@@ -1,0 +1,51 @@
+<div class="page">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-2 col-lg-4 page-sidebar">
+				<div class="text-center box-profile">
+					<p>{{'APP.TITLE' | translate}}</p>
+				</div>
+				<div class="box-menu">
+					<ul class="menu-items">
+						<li class="item" ng-repeat="item in vm.menu.items" ui-sref-active="active" ng-click="vm.menu.activeIndex = $index" ng-class="vm.getMenuItemClass($index)" ng-mouseenter="vm.menu.mouseoverIndex=$index" ng-mouseleave="vm.menu.mouseoverIndex=-1">
+							<a ui-sref="{{item.getToken()}}" ui-sref-opts="{reload:true}"><span>{{item.getName() | translate}}</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-10 col-lg-8 page-body">
+				<header class="row header-page">
+					<div class="col-sm-8">
+						<ul class="breadcrumb">
+							<li ng-repeat="item in vm.breadcrumbs.items">
+								<a ui-sref="{{item.getToken()}}" ui-sref-opts="{reload:true}"><span>{{item.getName() | translate}}</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-sm-4 header-buttons">
+						<ul>
+							<li class="icon dropdown-info user-info">
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown">
+										<i class="fa fa-gear"></i>
+									</a>
+									<ul class="dropdown-menu text-uppercase">
+										<li>
+											<div class="col-sm-12">
+												<h3>{{vm.getLoggedUser()}}</h3>
+											</div>
+										</li>
+										<li ng-click="vm.logOut()">
+											<button spinner="{{vm.SpinnerKey.LOGOUT_BUTTON}}" class="btn">Wyloguj</button>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</header>
+				<div id="view" ui-view></div>
+			</div>
+		</div>
+	</div>
+</div>
