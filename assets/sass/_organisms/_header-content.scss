@@ -1,0 +1,63 @@
+// File Name: _header-nav.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 29.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+.header-content {
+	border-bottom: .1em solid $gray-lightest;
+	padding: 1.5em 0 1em 0;
+	@include border-radius(.25em .25em 0 0);
+	> .nav {
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		.nav {
+			.nav-item {
+				.nav-link {
+					color: $gray-dark;
+					font-weight: 300;
+					&:hover,
+					&.active,
+					&:active {
+						color: $brand-primary;
+					}
+				}
+			}
+		}
+	}
+	p {
+		font-size: $font-size-xs;
+		color: $gray-light;
+		font-weight: 300;
+		span {
+			margin-right: $spacer * 2;
+			color: $brand-primary;
+		}
+	}
+	.heading {
+		display: flex;
+		align-content: flex-end;
+		flex-direction: column;
+		.nav-buttons {
+			&.right {
+				justify-content: flex-end;
+				.btn {
+					padding-right: 0;
+				}
+			}
+		}
+		h6 {
+			color: $gray-light;
+			font-weight: 300;
+			align-self: flex-end;
+			display: inline-flex;
+			span {
+				margin-left: .25em;
+				font-weight: 500;
+				color: $gray-dark;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// File Name: bar-progress.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.bar-progress {
+	border: $progres-border-width solid $progres-border-color;
+	height: .7rem;
+	position: relative;
+	box-sizing: content-box;
+	.progress-value {
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 0;
+		height: .7rem;
+		border-right: $progres-border-width solid $progres-border-color;
+		background: url($progress-image);
+		animation: progress-move linear .50s;
+		animation-iteration-count: infinite;
+		transform-origin: 50% 50%;
+		-webkit-animation: progress-move linear .4s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-transform-origin: 50% 50%;
+		-moz-animation: progress-move linear 1s;
+		-moz-animation-iteration-count: infinite;
+		-moz-transform-origin: 50% 50%;
+		-o-animation: progress-move linear 1s;
+		-o-animation-iteration-count: infinite;
+		-o-transform-origin: 50% 50%;
+		-ms-animation: progress-move linear 1s;
+		-ms-animation-iteration-count: infinite;
+		-ms-transform-origin: 50% 50%;
+	}
+}

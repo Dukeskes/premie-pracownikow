@@ -1,0 +1,8 @@
+node_modules/
+dist/
+bower_components/
+index.html
+ng/app-dev.js
+.DS_Store
+.idea
+assets/css/main.css

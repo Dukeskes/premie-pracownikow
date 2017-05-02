@@ -1,0 +1,10 @@
+// File Name: _btn-input.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 26.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.btn-input-group {
+	@include button-variant($btn-input-group-color, $btn-input-group-bg, $btn-input-group-border);
+}

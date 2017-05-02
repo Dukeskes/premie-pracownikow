@@ -1,0 +1,58 @@
+// File Name: _form-item.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.form-elements {
+	> header {
+		padding: 1.5em 2em;
+		h3 {
+			font-weight: 400;
+			font-family: $font-family-current;
+		}
+		p {
+			color: $gray-light;
+			font-weight: 300;
+		}
+	}
+	> article {
+		border-bottom: .1em solid $blue-lightest;
+		padding-top: 1em;
+		padding-left: 3em;
+		&:nth-last-child(1) {
+			padding-bottom: 2em;
+			margin-bottom: 2em;
+		}
+	}
+	> footer {
+		padding-left: 3em;
+		padding-right: 3em;
+	}
+	&:nth-last-child(1){
+		> article {
+			&:nth-last-child(1) {
+				border-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.modal {
+	.form-elements {
+		&:nth-child(1) {
+			> header {
+				&:nth-child(1) {
+					padding-top: 0;
+				}
+			}
+		}
+		> article {
+			padding-right: 3em;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+}

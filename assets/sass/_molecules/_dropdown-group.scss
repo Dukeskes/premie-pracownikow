@@ -1,0 +1,23 @@
+// File Name: _dropdown-group.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.dropdown-group {
+	&.form-group {
+		.col-form-label {
+			color: $gray;
+			font-size: .8em;
+			display: inline-flex;
+		}
+		.dropdown {
+			.btn {
+				text-transform: none;
+				font-size: .8em;
+				display: inline-flex;
+			}
+		}
+	}
+}

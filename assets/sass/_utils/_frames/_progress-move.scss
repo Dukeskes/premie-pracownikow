@@ -1,0 +1,52 @@
+// File Name: _progress-move.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+
+@keyframes progress-move{
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -5px 0;
+	}
+}
+
+@-moz-keyframes progress-move{
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -5px 0;
+	}
+}
+
+@-webkit-keyframes progress-move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -5px 0;
+	}
+}
+
+@-o-keyframes progress-move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -5px 0;
+	}
+}
+
+@-ms-keyframes progress-move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -5px 0;
+	}
+}

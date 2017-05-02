@@ -1,0 +1,65 @@
+// ----------------------------------------------------------------------
+// Vertical List
+// ----------------------------------------------------------------------
+// example: 
+//
+//	@include generate-list-vertical(
+//		/* name: */ sidebar-child,
+//		/* font-size: */ 15px,
+//		/* color: */ #fff,
+//		/* font-weight: */ 400,
+//		/* line-height: */ normal,
+//		/* padding: */ 15px 0px 10px 20px,
+//		/* margin: */ 0,
+//		/* background: */ #fff,
+//		/* border: */ 0,
+//		/* border-radius: */ 0,
+//		/* text-transform: */ normal,
+//		/* text-align: */ left);
+//
+// ----------------------------------------------------------------------
+
+@mixin generate-list-vertical($name, $fontSize, $color, $secondColor, $fontWeight, $secondWeight, $lineHeight, $padding, $margin, $backgroundColor, $border, $borderRadius, $textTransform, $textAlign){
+	.list-#{$name} {
+		background: $backgroundColor;
+		> li {
+			a {
+				font-size: $fontSize;
+				color: $color;
+				font-weight: $fontWeight;
+                line-height: $lineHeight;
+                padding: $padding;
+                margin: $margin;
+                background-color: $backgroundColor;
+                border: $border;
+                @include roundedCorners($borderRadius);
+                text-transform: $textTransform;
+                text-align: $textAlign;
+				cursor: pointer;
+				width: 100%;
+				&:hover,
+				&:active,
+				&.active,
+				&:focus{
+					color: $secondColor;
+					background: $backgroundColor;
+					font-weight: $secondWeight;
+				}
+				&:disabled,
+				&.disabled {
+					@include opacity(.3);
+					color: $color;
+					font-weight: $fontWeight;
+					&:hover,
+					&:active,
+					&.active,
+					&:focus {
+						@include opacity(.3);
+						color: $color;
+						font-weight: $fontWeight;
+					}
+				}
+			}
+		}
+	}
+}

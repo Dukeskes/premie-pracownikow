@@ -1,0 +1,67 @@
+// ----------------------------------------------------------------------
+// Bootstrap input
+// ----------------------------------------------------------------------
+// example: 
+//
+//  @include generate-input(
+//      /* name: */ primary,
+//      /* font-size: */ 14px,
+//      /* color: */ #f00,
+//      /* font-weight: */ 900,
+//      /* line-height: */ 18px,
+//      /* padding: */ 10px 20px,
+//      /* backgroundColor: */ #00f,
+//      /* border: */ 3px solid #0f0,
+//      /* border-radius: */ 50%,
+//      /* text-transform: */ uppercase,
+//      /* text-align: */ center,
+//      /* height: */ 40px);
+// ----------------------------------------------------------------------
+
+@mixin generate-input($name, $fontSize, $color, $fontWeight, $lineHeight, $padding, $backgroundColor, $border, $borderRadius, $textTransform, $textAlign, $height) {
+	.input.input-#{$name} {
+        height: $height;
+		font-size: $fontSize;
+		color: $color;
+		font-weight: $fontWeight;
+		line-height: $lineHeight;
+		padding: $padding;
+		background-color: $backgroundColor;
+		border: $border;
+		text-align: $textAlign;
+		@include roundedCorners($borderRadius);
+		cursor: pointer;
+		display: inline-block;
+  		box-sizing: border-box;
+		box-shadow: none;
+  		outline: none;
+		span,
+		i {
+			font-size: $fontSize;
+			color: $color;
+			font-weight: $fontWeight;
+			line-height: $lineHeight;
+			vertical-align: middle;
+		}
+		&:disabled,
+		&.disabled {
+			cursor: default;
+			@include opacity(.3);
+			&:hover,
+			&:active
+			&:focus,
+			&:visited,
+			&.active {
+				color: $color;
+				background: $backgroundColor;
+				border: $border;
+				text-decoration: none;
+				span,
+				i {
+					color: $color;
+				}
+			}
+		}
+        @include placeholder($fontSize, $color, $textTransform);
+	}
+}

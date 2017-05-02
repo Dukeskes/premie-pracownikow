@@ -1,0 +1,17 @@
+// File Name: _input-group.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.input-group {
+	.input-group-btn {
+		font-size: .75em;
+		.btn {
+			i {
+				margin-right: 0;
+			}
+		}
+	}
+}

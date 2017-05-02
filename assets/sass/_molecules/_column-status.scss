@@ -1,0 +1,16 @@
+// File Name: _column-status.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 26.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.column-status {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	.dot-status {
+		margin-right: .75em;
+	}
+}

@@ -1,0 +1,59 @@
+// File Name: _modal.scss
+// Description:
+// Used by: main.scss
+// Author: BartDukes
+// Date: 24.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+
+.modal {
+	.modal-content {
+		border-radius: 0;
+		.modal-header {
+			flex-direction: column;
+			align-items: flex-end;
+		}
+	}
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+	@include single-transition(all, 1s, ease-in-out, 0);
+}
+
+/* Modal animation */
+.modal {
+	@include single-transition(all, 1s, ease-in-out, 0);
+	opacity: 0;
+	top: -10em;
+	display: block;
+}
+.modal-open {
+	.modal-backdrop {
+		@include single-transition(all, 1s, ease-in-out, 0);
+		opacity: .8;
+
+	}
+	.modal {
+		@include single-transition(all, 1s, ease-in-out, .3s);
+		opacity: 1;
+		top: 0;
+		z-index: 1060;
+	}
+}
+
+/* Modal full width */
+.modal {
+	&.modal-full > .modal-dialog,
+	> .modal-dialog.modal-full {
+		max-width: $modal-full;
+	}
+}
+
+/* Modal xl */
+.modal {
+	&.modal-xl > .modal-dialog,
+	> .modal-dialog.modal-xl {
+		max-width: $modal-xl;
+	}
+}

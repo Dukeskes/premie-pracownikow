@@ -1,0 +1,109 @@
+// File Name: _summernote.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 24.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.note-editor.note-frame {
+	border: $border-width solid $input-border-color;
+	//background: $blue-light;
+	.note-toolbar {
+		background: $blue-dark;
+		padding: 0;
+		.note-btn-group {
+			margin: 0;
+			.note-btn {
+				line-height: 2.45rem;
+				height: 2.45rem;
+				//color: $blue-light;
+				background: $blue-dark;
+				padding: 0 .5rem;
+				* {
+					line-height: 2.45rem;
+					//color: $blue-light;
+				}
+				&.note-current-color-button {
+					i {
+						height: 2.45rem;
+						line-height: 2.45rem;
+						padding: .25rem;
+						display: flex;
+						&:before {
+							line-height: 2.45em;
+						}
+					}
+				}
+				+ .dropdown-toggle {
+					padding-left: 0;
+					margin-left: -.5rem;
+				}
+				.note-icon-caret {
+					display: none;
+				}
+			}
+			.dropdown-menu {
+				background: $white;
+				min-width: 20em;
+				> li {
+					> a {
+						text-transform: none;
+						span {
+							line-height: inherit;
+						}
+						p {
+							line-height: normal;
+						}
+						> * {
+							padding: 0 1rem;
+						}
+					}
+					&:hover * {
+						text-decoration: none;
+					}
+				}
+				.btn-group {
+					display: flex;
+					flex-wrap: wrap;
+					margin: 0;
+					margin-bottom: .5rem;
+					.note-palette-title {
+						width: 100%;
+						display: flex;
+						font-size: .8em;
+						margin: 0;
+						//color: $blue-light;
+						text-transform: uppercase;
+						background: $blue-dark;
+						padding: .5rem;
+						+ div {
+							width: 100%;
+							margin-bottom: .25em;
+						}
+					}
+					.note-color-reset {
+						border-radius: 0;
+						background: $brand-primary;
+						//color: $blue-light;
+						padding: .5em;
+						margin: 0;
+						&:hover {
+							//background: $blue-light;
+							color: $brand-primary;
+						}
+					}
+					.note-holder {
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+	.note-editing-area .note-editable.panel-body {
+		//background: $blue-light;
+		//color: $blue-dark;
+	}
+}
+.note-popover.popover {
+	display: none;
+}

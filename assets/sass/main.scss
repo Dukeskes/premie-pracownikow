@@ -1,0 +1,201 @@
+// ----------------------------------------------------------------------
+// Mixins
+// ----------------------------------------------------------------------
+// Utilities
+@import "mixins/breakpoints";
+@import "mixins/hover";
+@import "mixins/image";
+@import "mixins/badge";
+@import "mixins/resize";
+@import "mixins/screen-reader";
+@import "mixins/size";
+@import "mixins/reset-text";
+@import "mixins/text-emphasis";
+@import "mixins/text-hide";
+@import "mixins/text-truncate";
+@import "mixins/transforms";
+@import "mixins/visibility";
+@import "mixins/opacity";
+@import "mixins/backface-visibility";
+@import "mixins/background-cover";
+@import "mixins/box-shadow";
+@import "mixins/font_face";
+@import "mixins/gradient-linear";
+@import "mixins/gradient-linear-angle";
+@import "mixins/gradient-linear-round";
+@import "mixins/gradient-radial";
+@import "mixins/inline-block";
+@import "mixins/inner-shadow";
+@import "mixins/keyframes";
+@import "mixins/placeholder";
+@import "mixins/rem";
+@import "mixins/retina";
+@import "mixins/rounded-corners";
+@import "mixins/transitions";
+@import "mixins/triangles";
+@import "mixins/column-rule-style";
+@import "mixins/column-width";
+
+// Components
+@import "mixins/alert";
+@import "mixins/buttons";
+@import "mixins/cards";
+@import "mixins/pagination";
+@import "mixins/lists";
+@import "mixins/list-group";
+@import "mixins/nav-divider";
+@import "mixins/forms";
+@import "mixins/table-row";
+
+// Skins
+@import "mixins/background-variant";
+@import "mixins/border-radius";
+@import "mixins/gradients";
+
+
+// Animations
+@import "mixins/transitions";
+
+// Layout
+@import "mixins/clearfix";
+// @import "mixins/navbar-align";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/float";
+
+
+// ----------------------------------------------------------------------
+// utils
+// ----------------------------------------------------------------------
+@import "_utils/_frames/pulse";
+@import "_utils/_frames/rotate";
+@import "_utils/_frames/progress-move";
+@import "_utils/variables";
+@import "_utils/fonts";
+@import "_utils/grid-test";
+@import "_utils/reset";
+@import "_utils/align";
+@import "_utils/background";
+@import "_utils/borders";
+@import "_utils/clearfix";
+@import "_utils/display";
+@import "_utils/flex";
+@import "_utils/float";
+@import "_utils/position";
+@import "_utils/screenreaders";
+@import "_utils/sizing";
+@import "_utils/spacing";
+@import "_utils/text";
+@import "_utils/visibility";
+@import "_utils/typography";
+
+// ----------------------------------------------------------------------
+// generic
+// ----------------------------------------------------------------------
+@import "generic/simple";
+@import "generic/buttons";
+@import "generic/lists";
+@import "generic/inputs";
+@import "generic/navbars";
+@import "generic/checkboxs";
+@import "generic/dots";
+@import "generic/dropdowns";
+@import "generic/calendars";
+
+// ----------------------------------------------------------------------
+// Sources
+// ----------------------------------------------------------------------
+@import "bootstrap/bootstrap";
+
+// ----------------------------------------------------------------------
+// atoms
+// ----------------------------------------------------------------------
+@import "_atoms/btn";
+@import "_atoms/btn-box";
+@import "_atoms/btn-transparent";
+@import "_atoms/btn-input-group";
+@import "_atoms/btn-counter";
+@import "_atoms/navbarBrand";
+@import "_atoms/h";
+@import "_atoms/h4";
+@import "_atoms/h5";
+@import "_atoms/box-white";
+@import "_atoms/item-status";
+@import "_atoms/table-vertical";
+@import "_atoms/table-headerless";
+@import "_atoms/table-horizontal";
+@import "_atoms/bar-progress";
+@import "_atoms/bar-steps";
+@import "_atoms/checkbox-inverted";
+@import "_atoms/checkbox-onoff";
+@import "_atoms/dot-status";
+@import "_atoms/input";
+@import "_atoms/textarea";
+
+// ----------------------------------------------------------------------
+// molecules
+// ----------------------------------------------------------------------
+@import "_molecules/spinner";
+@import "_molecules/toaster";
+@import "_molecules/pagination";
+@import "_molecules/breadcrumb";
+@import "_molecules/tablePrimary";
+@import "_molecules/table-header";
+@import "_molecules/input";
+@import "_molecules/multipleSelect";
+@import "_molecules/calendar";
+@import "_molecules/nav-primary";
+@import "_molecules/content-footer";
+@import "_molecules/summernote";
+@import "_molecules/modal";
+@import "_molecules/radioHuge";
+@import "_molecules/alert";
+@import "_molecules/nav-buttons";
+@import "_molecules/v-list";
+@import "_molecules/search-group";
+@import "_molecules/dropdown-group";
+@import "_molecules/content-heading";
+@import "_molecules/content-vertical";
+@import "_molecules/more";
+@import "_molecules/nav-hoover";
+@import "_molecules/nav-simple";
+@import "_molecules/box-company";
+@import "_molecules/box-vertical";
+@import "_molecules/nav-vertical";
+@import "_molecules/content-form";
+@import "_molecules/form-elements";
+@import "_molecules/form-group-horizontal";
+@import "_molecules/form-group-vertical";
+@import "_molecules/input-group";
+@import "_molecules/column-status";
+
+// ----------------------------------------------------------------------
+// organisms
+// ----------------------------------------------------------------------
+@import "_organisms/navbar";
+@import "_organisms/header-container";
+@import "_organisms/footer-container";
+@import "_organisms/header-content";
+@import "_organisms/section-chart";
+@import "_organisms/section-horizontal-details";
+@import "_organisms/modal-company-add";
+
+// ----------------------------------------------------------------------
+// concept - to remove dev tests
+// ----------------------------------------------------------------------
+@import "_concept/concept-modal";
+
+// ----------------------------------------------------------------------
+// templates
+// ----------------------------------------------------------------------
+@import "_template/login";
+@import "_template/dashboard";
+
+
+body {
+	font-family: $font-family-base;
+	outline: none;
+}
+body .content {
+	font-family: $font-family-base;
+}

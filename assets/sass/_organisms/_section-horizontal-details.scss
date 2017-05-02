@@ -1,0 +1,28 @@
+// File Name: _section-horizontal-details.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 29.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+.section-horizontal-details {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	> div {
+		border-right: .1em solid $gray-lighter;
+		text-align: center;
+		h6 {
+			text-transform: uppercase;
+			margin-bottom: 1em;
+			color: $blue-light;
+		}
+		p {
+			color: $blue-dark;
+			margin-bottom: 0;
+			font-weight: 100;
+		}
+		&:nth-last-child(1){
+			border-right: 0;
+		}
+	}
+}

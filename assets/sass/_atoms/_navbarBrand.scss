@@ -1,0 +1,13 @@
+// File Name: _navbarBrand.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+.navbar-brand {
+	padding: $navbar-brand-padding-y $navbar-brand-padding-x;
+	img {
+		height: 2rem;
+	}
+}

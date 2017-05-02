@@ -1,0 +1,40 @@
+// File Name: _btn-box.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.btn.btn-box {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: .1em solid $gray-lighter;
+	padding: $spacer*2 $spacer*3;
+	@include single-transition(all, .2s, linear, 0s);
+	i {
+		font-size: 3em;
+		@include single-transition(all, .2s, linear, .4s);
+		margin-bottom: .5em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	span {
+		text-transform: uppercase;
+		font-weight: 400;
+		@include single-transition(all, .2s, linear, .4s);
+	}
+	&:hover {
+		background: $brand-primary;
+		@include single-transition(all, .2s, linear, 0s);
+		i {
+			color: $white;
+			@include single-transition(all, .2s, linear, .4s);
+		}
+		span {
+			color: $white;
+			@include single-transition(all, .2s, linear, .4s);
+		}
+	}
+}

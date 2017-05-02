@@ -1,0 +1,146 @@
+// File Name: icons.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 24.01.2017
+// Dependencies:
+// ------------------------------------------------------------
+$princity-font-path: "../fonts/icons/Princity" !default;
+
+$pc-Key: "\e900";
+$pc-Alert: "\e901";
+$pc-Basket: "\e902";
+$pc-Bin: "\e903";
+$pc-Chart: "\e904";
+$pc-Grid: "\e905";
+$pc-Help: "\e906";
+$pc-Level: "\e907";
+$pc-List: "\e908";
+$pc-Map: "\e909";
+$pc-Monitor: "\e90a";
+$pc-Printer: "\e90b";
+$pc-Search: "\e90c";
+$pc-Service: "\e90d";
+$pc-Settings: "\e90e";
+$pc-Timeline: "\e90f";
+$pc-Toner: "\e910";
+$pc-User: "\e911";
+
+@font-face {
+	font-family: 'Princity';
+	src:  url('#{$princity-font-path}/Princity.eot');
+	src:  url('#{$princity-font-path}/Princity.eot') format('embedded-opentype'),
+	url('#{$princity-font-path}/Princity.ttf') format('truetype'),
+	url('#{$princity-font-path}/Princity.woff') format('woff'),
+	url('#{$princity-font-path}/Princity.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="pc-"], [class*=" pc-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'Princity' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+.pc-Key {
+	&:before {
+		content: $pc-Key;
+	}
+}
+.pc-Printer {
+	&:before {
+		content: $pc-Printer;
+	}
+}
+.pc-User {
+	&:before {
+		content: $pc-User;
+	}
+}
+.pc-Toner {
+	&:before {
+		content: $pc-Toner;
+	}
+}
+.pc-Timeline {
+	&:before {
+		content: $pc-Timeline;
+	}
+}
+.pc-Settings {
+	&:before {
+		content: $pc-Settings;
+	}
+}
+.pc-Service {
+	&:before {
+		content: $pc-Service;
+	}
+}
+.pc-Search {
+	&:before {
+		content: $pc-Search;
+	}
+}
+.pc-Monitor {
+	&:before {
+		content: $pc-Monitor;
+	}
+}
+.pc-Map {
+	&:before {
+		content: $pc-Map;
+	}
+}
+.pc-List {
+	&:before {
+		content: $pc-List;
+	}
+}
+.pc-Level {
+	&:before {
+		content: $pc-Level;
+	}
+}
+.pc-Help {
+	&:before {
+		content: $pc-Help;
+	}
+}
+.pc-Grid {
+	&:before {
+		content: $pc-Grid;
+	}
+}
+.pc-Chart {
+	&:before {
+		content: $pc-Chart;
+	}
+}
+.pc-Bin {
+	&:before {
+		content: $pc-Bin;
+	}
+}
+.pc-Basket {
+	&:before {
+		content: $pc-Basket;
+	}
+}
+.pc-Alert {
+	&:before {
+		content: $pc-Alert;
+	}
+}
+

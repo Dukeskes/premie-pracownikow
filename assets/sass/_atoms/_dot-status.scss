@@ -1,0 +1,22 @@
+// File Name: _status-dot.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.dot-status {
+	width: .75rem;
+	height: .75rem;
+	display: inline-block;
+	@include border-radius(50%);
+	&.status-success {
+		background: $brand-primary;
+	}
+	&.status-danger {
+		background: $brand-danger;
+	}
+	&.status-warning {
+		background: $brand-warning;
+	}
+}

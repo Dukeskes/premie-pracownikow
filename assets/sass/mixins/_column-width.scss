@@ -1,0 +1,7 @@
+@mixin column-width($width) {
+	-webkit-column-width:   $width;
+	-moz-column-width:      $width;
+	-o-column-width:        $width;
+	-ms-column-width:       $width;
+	column-width:           $width;
+}

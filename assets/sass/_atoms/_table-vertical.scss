@@ -1,0 +1,73 @@
+// File Name: _table-vertical.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.table-vertical {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	tbody {
+		tr {
+			th,
+			td {
+				font-size: .8em;
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
+				border: 0;
+				color: $gray-dark;
+				vertical-align: middle;
+			}
+			th {
+				font-weight: 600;
+			}
+			td {
+				span {
+					margin-left: .5em;
+				}
+			}
+			&.row-warning {
+				td {
+					color: $brand-warning;
+					.bar-progress {
+						border-color: $brand-warning;
+						.progress-value {
+							background-image: url($progress-image-warning);
+							border-color: $brand-warning;
+						}
+					}
+				}
+			}
+			&.row-danger {
+				td {
+					color: $brand-danger;
+					.bar-progress {
+						border-color: $brand-danger;
+						.progress-value {
+							background-image: url($progress-image-danger);
+							border-color: $brand-danger;
+						}
+					}
+				}
+			}
+			&.row-success {
+				td {
+					color: $brand-primary;
+					.bar-progress {
+						border-color: $brand-primary;
+						.progress-value {
+							background-image: url($progress-image-success);
+							border-color: $brand-primary;
+						}
+					}
+				}
+			}
+			td {
+				&.color-stay {
+					color: $gray-dark;
+				}
+			}
+		}
+	}
+}

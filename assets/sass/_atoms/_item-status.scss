@@ -1,0 +1,38 @@
+// File Name: _item-status.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.item-status {
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: .3em;
+		background: $brand-primary;
+	}
+	&.status-danger {
+		&:before {
+			background: $brand-danger;
+		}
+	}
+	&.status-info {
+		&:before {
+			background: $brand-info;
+		}
+	}
+	&.status-warning {
+		&:before {
+			background: $brand-warning;
+		}
+	}
+	&.status-success {
+		&:before {
+			background: $brand-primary;
+		}
+	}
+}

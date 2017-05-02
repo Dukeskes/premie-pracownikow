@@ -1,0 +1,19 @@
+// ------------------------------------------------------------
+// |-----------------------
+// | box
+// |-----------------------
+// |
+//	@include box(
+//		/* $background */ transparent,
+//		/* $border-color */ #fff,
+//		/* $border-width */ 0,
+//		/* $border-radius */ 0);
+// |
+// |-----------------------
+
+@mixin box($background, $border-color, $border-width: 0, $border-radius: 0) {
+	background: $background;
+	border-radius: $border-radius;
+	border-width: $border-width;
+	border-color: $border-color;
+}

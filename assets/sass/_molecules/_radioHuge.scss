@@ -1,0 +1,28 @@
+// File Name: _radioHuge.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.radioHuge {
+	.item {
+		text-align: center;
+		padding: 3em;
+		.btn {
+			width: 12rem;
+			height: 12rem;
+			padding: 0;
+			i {
+				font-size: 5rem;
+				line-height: 9rem;
+			}
+			input[type="radio"] {
+				display: none;
+			}
+			span {
+				line-height: 3rem;
+			}
+		}
+	}
+}

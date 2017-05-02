@@ -1,0 +1,27 @@
+// ----------------------------------------------------------------------
+// Bootstrap dot
+// ----------------------------------------------------------------------
+// example: 
+//
+//@include generate-dot(
+//	/* name: */ red,
+//	/* width: */ 5px,
+//	/* height: */ 5px,
+//	/* background: */ red,
+//	/* border-radius */ 0,
+//	/* border-width: */ 0,
+//	/* border-color: */ transparent
+//	); 
+// ----------------------------------------------------------------------
+@mixin generate-dot( $name, $width, $height, $background, $border-radius, $border-width, $border-color) {
+	.dot.dot-#{$name} {
+		display: inline-block;
+		width: $width;
+		height: $height;
+		background: $background;
+		border-style: solid;
+		border-width: $border-width;
+		border-color: $border-color;
+		@include roundedCorners($border-radius);
+	}
+}

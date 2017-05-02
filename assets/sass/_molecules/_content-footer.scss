@@ -1,0 +1,24 @@
+// File Name: _contentFooter.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 22.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.content-footer {
+	> div {
+		> div {
+			&:nth-child(1) {
+				padding-left: 6em;
+			}
+			&:nth-last-child(1) {
+				padding-right: 6em;
+				text-align: right;
+				.pagination {
+					margin: 0;
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+}

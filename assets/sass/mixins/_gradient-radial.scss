@@ -1,0 +1,19 @@
+// File Name: -radial-gradient.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 15.06.2016
+// Dependencies:
+// ------------------------------------------------------------
+
+@mixin gradientRadial($color1, $color2)
+{
+  background: $color1;
+  background: -moz-radial-gradient(center, ellipse cover, $color1 0%, $color1 40%, $color2 40%, $color2 41%, $color2 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $color1), color-stop(40%, $color1), color-stop(40%, $color2), color-stop(41%, $color2), color-stop(100%, $color2));
+  background: -webkit-radial-gradient(center, ellipse cover, $color1 0%, $color1 40%, $color2 40%, $color2 41%, $color2 100%);
+  background: -o-radial-gradient(center, ellipse cover, $color1 0%, $color1 40%, $color2 40%, $color2 41%, $color2 100%);
+  background: -ms-radial-gradient(center, ellipse cover, $color1 0%, $color1 40%, $color2 40%, $color2 41%, $color2 100%);
+  background: radial-gradient(ellipse at center, $color1 0%, $color1 40%, $color2 40%, $color2 41%, $color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2', GradientType=1 );
+}

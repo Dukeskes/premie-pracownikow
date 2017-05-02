@@ -1,0 +1,70 @@
+// File Name: _tablePrimary.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.tablePrimary {
+	margin-bottom: 0;
+	thead {
+		tr {
+			th {
+				line-height: 4em;
+				background: $table-head-bg;
+				color: $table-head-color;
+				padding: 0 .8rem;
+				border: $table-border-width solid $table-border-color;
+				text-transform: uppercase;
+				font-size: .8rem;
+				text-align: left;
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				height: 4em;
+				vertical-align: middle;
+				font-size: .8em;
+				padding: 0 .8rem;
+				border: 0;
+				&.no-padding {
+					padding: 0;
+				}
+				table {
+					margin-bottom: 0;
+				}
+			}
+			&:nth-child(2n+1) {
+				td {
+					background: $gray;
+				}
+			}
+		}
+	}
+	thead,
+	tbody {
+		tr {
+			th {
+				&.backgroundInverse {
+					//background-color: #{$blue};
+					//color: $blue-light;
+					text-align: center;
+					//border-left: .1em solid #{$blue};
+					//border-right: .1em solid #{$blue};
+				}
+			}
+			td {
+				&.borderLeft {
+					//border-left: .1em solid #{$blue};
+					text-align: center;
+				}
+				&.borderRight {
+					//border-right: .1em solid #{$blue};
+					text-align: center;
+				}
+			}
+		}
+	}
+}

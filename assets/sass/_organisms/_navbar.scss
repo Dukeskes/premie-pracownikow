@@ -1,0 +1,65 @@
+// File Name: navbar.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+.navbar {
+	background: $blue-dark;
+	font-family: $font-family-secondary;
+	.navbar-nav {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		align-items: center;
+		.nav-item {
+			.nav-link {
+				padding: 1.25rem 1rem;
+				margin: 0;
+				font-size: .8em;
+				color: $white;
+				font-weight: 500;
+				box-sizing: border-box;
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					width: 0;
+					margin-left: 50%;
+					height: .2em;
+					top: 100%;
+					left: 0;
+					background: transparent;
+					@include single-transition(all, .2s, linear, 0s);
+				}
+				&:hover,
+				&.active {
+					&:after {
+						background: $brand-primary;
+						margin-left: 0;
+						width: 100%;
+						@include single-transition(all, .2s, linear, 0s);
+					}
+				}
+			}
+		}
+		&.navbar-icons {
+			.nav-item {
+				padding-left: 0rem;
+				padding-right: 0rem;
+				.nav-link {
+					i {
+						font-size: 1.25rem;
+					}
+				}
+			}
+		}
+		&.navbar-pages {
+			.nav-item {
+				.nav-link {
+					line-height: 1.75rem;
+				}
+			}
+		}
+	}
+}

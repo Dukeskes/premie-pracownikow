@@ -1,0 +1,127 @@
+// ----------------------------------------------------------------------
+
+  // Change placeholder text color
+
+// ----------------------------------------------------------------------
+
+// example: @include placeholder-color(#333);
+// example: @include placeholder-font-size(14px);
+// example: @include placeholder-transform(uppercase);
+
+@mixin placeholder($fontSize, $color, $textTransform) {
+  &.placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-transform: $textTransform;
+  }
+
+  &:-moz-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-transform: $textTransform;
+  }
+
+  &::-moz-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-transform: $textTransform;
+  }
+
+  &::-webkit-input-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-transform: $textTransform;
+  }
+
+  &:-ms-input-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-transform: $textTransform;
+  }
+}
+
+@mixin placeholder-color($color) {
+  &.placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin placeholder-font-size($font-size) {
+  &.placeholder {
+    font-size: $font-size;
+  }
+
+  &:-moz-placeholder {
+    font-size: $font-size;
+  }
+
+  &::-moz-placeholder {
+    font-size: $font-size;
+  }
+
+  &::-webkit-input-placeholder {
+    font-size: $font-size;
+  }
+
+  &:-ms-input-placeholder {
+    font-size: $font-size;
+  }
+}
+@mixin placeholder-transform($textTransform) {
+  &.placeholder {
+    text-transform: $textTransform;
+  }
+
+  &:-moz-placeholder {
+    text-transform: $textTransform;
+  }
+
+  &::-moz-placeholder {
+    text-transform: $textTransform;
+  }
+
+  &::-webkit-input-placeholder {
+    text-transform: $textTransform;
+  }
+
+  &:-ms-input-placeholder {
+    text-transform: $textTransform;
+  }
+}
+@mixin placeholder-font-weight($font-weight) {
+	&.placeholder {
+		font-weight: $font-weight;
+	}
+
+	&:-moz-placeholder {
+		font-weight: $font-weight;
+	}
+
+	&::-moz-placeholder {
+		font-weight: $font-weight;
+	}
+
+	&::-webkit-input-placeholder {
+		font-weight: $font-weight;
+	}
+
+	&:-ms-input-placeholder {
+		font-weight: $font-weight;
+	}
+}

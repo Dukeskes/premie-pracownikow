@@ -1,0 +1,31 @@
+{
+	"ERROR.UNKNOWN": "Wystąpił błąd",
+
+	"STATE.LOGIN": "Logowanie",
+	"STATE.REGISTRATION": "Rejestracja",
+	"STATE.APP": "App",
+	"STATE.DASHBOARD": "Pulpit",
+    "STATE.USER_EDIT": "Edycja profilu",
+	"STATE.ERROR": "Błąd",
+
+	"APP.TITLE": "Awesome!",
+	"APP.LOGOUT": "Wyloguj",
+	"APP.OK": "Ok",
+	"APP.CLOSE": "Zamknij",
+    "APP.TRYTHIS": "Spróbuj to!",
+
+	"LOGIN.TITLE": "Logowanie",
+	"LOGIN.USERNAME": "Login",
+	"LOGIN.PASSWORD": "Hasło",
+	"LOGIN.REGISTRATION": "Rejestracja",
+	"LOGIN.APPLY": "Zaloguj",
+
+	"REGISTRATION.TITLE": "Rejestracja",
+	"REGISTRATION.USERNAME": "Login",
+	"REGISTRATION.PASSWORD": "Hasło",
+	"REGISTRATION.LOGIN": "Logowanie",
+	"REGISTRATION.APPLY": "Zarejestruj",
+
+	"CONFIRM_DIALOG.TITLE": "Potwierdzenie",
+    "USER_PROFILE.TEST": "To jest teścik czary mary"
+}

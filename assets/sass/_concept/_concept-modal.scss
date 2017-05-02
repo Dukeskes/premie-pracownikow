@@ -1,0 +1,101 @@
+// File Name: _concept-modal.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.concept-modal {
+	.modal {
+		.modal-header {
+			background: $brand-primary;
+			padding: $spacer $spacer*2;
+			.container-fluid {
+				width: 100%;
+				.bar-steps {
+					margin: 1em 0 0;
+					font-size: 11px;
+					.bar-range {
+						justify-content: space-between;
+						&:after {
+							background: $green-dark;
+							top: 1em;
+							height: .5em;
+						}
+						.bar-step {
+							min-width: 2.5em;
+							&:before {
+								background: $white;
+								height: .5em;
+								top: 1em;
+							}
+							&.active {
+								&:after {
+									border: 0;
+									height: .5em;
+									top: 1em;
+									background: $green-dark;
+								}
+								~ .bar-step {
+									.dot {
+										width: 1.5em;
+										height: 1.5em;
+										margin-left: -.75em;
+										top: .25em;
+									}
+									&:after {
+										border: 0;
+										height: .5em;
+										top: 1em;
+										background: $green-dark;
+									}
+									p {
+										color: $green-dark;
+										opacity: 1;
+									}
+								}
+							}
+							.dot {
+								background: $white;
+							}
+							//&:nth-child(1) {
+							//	&:before {
+							//		content: "";
+							//		position: absolute;
+							//		right: 1.25em;
+							//		top: .85em;
+							//		width: 20rem;
+							//		height: .8em;
+							//		left: auto;
+							//		background: $green;
+							//		z-index: 1050;
+							//		@include single-transition(all, .4s, linear, 0s);
+							//	}
+							//}
+							&.active ~ .bar-step .dot {
+								background: $green-dark;
+							}
+							p {
+								color: $white;
+								text-transform: uppercase;
+								font-size: .7em;
+								margin-top: $spacer*3;
+							}
+							&:nth-last-child(1) {
+								.dot {
+									margin-left: .25em !important;
+								}
+							}
+						}
+					}
+				}
+				.bar-close {
+					display: flex;
+					flex-direction: column;
+					align-self: center;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

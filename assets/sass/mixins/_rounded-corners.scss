@@ -1,0 +1,81 @@
+// ----------------------------------------------------------------------
+
+  // Rounded Corners
+
+// ----------------------------------------------------------------------
+
+ // example: @include roundedCorners(10);
+
+@mixin roundedCorners($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+// Rounded Corners Top Only
+@mixin roundedTop($size) {
+  border-top-right-radius: $size;
+  border-top-left-radius: $size;
+  -webkit-border-top-left-radius: $size;
+  -webkit-border-top-right-radius: $size;
+  -moz-border-radius-topleft: $size;
+  -moz-border-radius-topright: $size;
+}
+
+// Rounded Corner Top Left Only
+@mixin roundedTopLeft($size) {
+  -webkit-border-top-left-radius: $size;
+  -moz-border-radius-topleft: $size;
+  border-top-left-radius: $size;
+}
+
+// Rounded Corner Top Right Only
+@mixin roundedTopRight($size) {
+  -webkit-border-top-right-radius: $size;
+  -moz-border-radius-topright: $size;
+  border-top-right-radius: $size;
+}
+
+// Rounded Corners Bottom Only
+@mixin roundedBottom($size) {
+  border-bottom-right-radius: $size;
+  border-bottom-left-radius: $size;
+  -webkit-border-bottom-left-radius: $size;
+  -webkit-border-bottom-right-radius: $size;
+  -moz-border-radius-bottomleft: $size;
+  -moz-border-radius-bottomright: $size;
+}
+
+// Rounded Corner Bottom Left Only
+@mixin roundedBottomLeft($size) {
+  -webkit-border-bottom-left-radius: $size;
+  -moz-border-radius-bottomleft: $size;
+  border-bottom-left-radius: $size;
+}
+
+// Rounded Corner Bottom Right Only
+@mixin roundedBottomRight($size) {
+  -webkit-border-bottom-right-radius: $size;
+  -moz-border-radius-bottomright: $size;
+  border-bottom-right-radius: $size;
+}
+
+// Rounded Corners Left Only
+@mixin roundedLeft($size) {
+  -webkit-border-top-left-radius: $size;
+  -webkit-border-bottom-left-radius: $size;
+  -moz-border-radius-topleft: $size;
+  -moz-border-radius-bottomleft: $size;
+  border-top-left-radius: $size;
+  border-bottom-left-radius: $size;
+}
+
+// Rounded Corners Right Only
+@mixin roundedRight($size) {
+  -webkit-border-top-right-radius: $size;
+  -webkit-border-bottom-right-radius: $size;
+  -moz-border-radius-topright: $size;
+  -moz-border-radius-bottomright: $size;
+  border-top-right-radius: $size;
+  border-bottom-right-radius: $size;
+}

@@ -1,0 +1,28 @@
+// File Name: _box-vertical.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 27.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.box-vertical {
+	text-align: center;
+	padding: 0 3em;
+	margin: 1em 0 3em 0;
+	h3 {
+		text-transform: uppercase;
+		font-weight: 400;
+		margin-top: 2em;
+	}
+	p {
+		font-size: .85em;
+		color: $gray;
+		margin-top: 1em;
+	}
+	.btn {
+		margin-top: 2em;
+	}
+	+ .box-vertical {
+		border-left: .1em solid $gray-lighter;
+	}
+}

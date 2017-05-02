@@ -1,0 +1,63 @@
+// File Name: _v-list.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 29.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+.v-list {
+	padding-left: 5rem;
+	> section {
+		article.item {
+			padding: $spacer/2 $spacer $spacer/3 $spacer;
+			border-top: $border-width solid $gray-lightest;
+			> div {
+				display: inline-flex;
+				flex-direction: column;
+				align-self: center;
+				padding: 0;
+				h5 {
+					margin-bottom: 0;
+					font-size: .75rem;
+				}
+				h6 {
+					color: $gray-light;
+					margin-bottom: 0;
+					font-weight: 100;
+					font-size: .75rem;
+				}
+				&.printer-name,
+				&.printer-data {
+					h5,h6 {
+						margin: $spacer * 1 / 2  0  $spacer * 3 / 4  0;
+					}
+				}
+				&:nth-child(2) {
+					padding-left: 1em;
+				}
+			}
+		}
+		header {
+			padding: $spacer;
+			margin-bottom: 0;
+			margin-top: $spacer;
+			h5.regular {
+				margin-bottom: 0;
+				color: $gray-dark;
+				span {
+					font-size: .8rem;
+					font-weight: 300;
+					margin-left: $spacer;
+					color: $gray-dark;
+				}
+			}
+			& + .item {
+				border-top: 0;
+			}
+			&:nth-child(1) {
+				margin-top: 0;
+				border-radius: .25em .25em 0 0;
+			}
+		}
+	}
+}

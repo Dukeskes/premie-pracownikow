@@ -1,0 +1,82 @@
+// File Name: calendar.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 21.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.uib-datepicker-popup.dropdown-menu {
+	border: $border-width;
+	background: $white;
+	//box-shadow: 2px 2px 5px 1px $brand-primary;
+	padding: .5em 0 0 0;
+	.btn.btn-default {
+		background: $gray;
+		padding: 0 1em;
+		span {
+			//color: $blue;
+			font-size: .8em;
+			font-weight: 300;
+			&.text-muted {
+				//color: $blue-light !important;
+				font-weight: 300;
+			}
+			&.text-info {
+				//color: $blue !important;
+				font-weight: 900;
+			}
+		}
+		span {
+			line-height: 3.5em;
+		}
+		&.uib-title {
+			color: $brand-primary;
+			background: transparent;
+			font-weight: 300;
+			font-size: .8em;
+		}
+		&.uib-left {
+			color: $brand-primary;
+			background: transparent;
+			.glyphicon.glyphicon-chevron-left {
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				&:before {
+					content: "\f053";
+				}
+			}
+		}
+		&.uib-right {
+			color: $brand-primary;
+			background: transparent;
+			.glyphicon.glyphicon-chevron-right {
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				&:before {
+					content: "\f054";
+				}
+			}
+		}
+		&.active span {
+			color: $red !important;
+			font-weight: 900 !important;
+		}
+		&.btn-info span {
+			color: $brand-primary;
+			font-weight: 400;
+		}
+	}
+	table {
+		td {
+			padding: 0;
+		}
+	}
+}

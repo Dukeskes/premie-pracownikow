@@ -1,0 +1,250 @@
+@mixin generate-calendar(
+	$name,
+	$btn-background,
+	$btn-border-width,
+	$btn-border-color,
+	$btn-border-radius,
+	$input-background,
+	$input-border-width,
+	$input-border-color,
+	$input-border-radius,
+	$height,
+	$heading-font,
+	$heading-color,
+	$item-font,
+	$item-color,
+	$item-font-box,
+	$item-active,
+	$item-active-box,
+	$item-inactive,
+	$item-inactive-box,
+	$btn-today,
+	$btn-clear,
+	$btn-done) {
+	.calendar-#{$name} {
+		&.input-group {
+			*,
+			*:focus {
+				outline: none !important;
+			}
+			@include generate-input(
+				/* name: */ default,
+				/* font-size: */ 12px,
+				/* color: */  #a0a0a0,
+				/* font-weight: */ normal,
+				/* line-height: */ 14px,
+				/* padding: */ 0,
+				/* backgroundColor: */ #fff,
+				/* border: */ solid 1px #b1b1b1,
+				/* border-radius: */ 0,
+				/* text-transform: */ none,
+				/* text-align: */ center,
+				/* height: */ 30px);
+			> input {
+				width: 100%;
+				padding-top: 0;
+				padding-bottom: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				border-right: 0;
+			}
+			> span {
+				padding-top: 0;
+				padding-bottom: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				height: $height;
+				> .btn {
+					padding-top: 0;
+					padding-bottom: 0;
+					margin-top: 0;
+					margin-bottom: 0;
+					height: $height;
+				}
+				@include generate-btn(
+					/* name: */ default,
+					/* font-size: */ 12px,
+					/* color: */ #fff,
+					/* font-weight: */ 300,
+					/* line-height: */ 18px,
+					/* padding: */ 0 20px,
+					/* backgroundColor: */ #55b9c9,
+					/* border: */ 1px solid #b1b1b1,
+					/* border-radius: */ 0,
+					/* text-transform: */ uppercase,
+					/* text-align: */ center);
+				@include generate-btn-hover(
+					/* name: */ default,
+					/* font-size: */ 12px,
+					/* color: */ #55b9c9,
+					/* font-weight: */ 300,
+					/* line-height: */ 18px,
+					/* padding: */ 0 20px,
+					/* backgroundColor: */ transparent,
+					/* border: */ 1px solid #55b9c9,
+					/* border-radius: */ 0,
+					/* text-transform: */ uppercase,
+					/* text-align: */ center);
+				.btn.btn-default {
+					border-color: #55b9c9;
+					border-left-color: $input-border-color;
+				}
+			}
+			.uib-datepicker-popup {
+				@include box(
+					/* $background */ $input-background,
+					/* $border-color */ $btn-border-color,
+					/* $border-width */ $btn-border-width,
+					/* $border-radius */ $btn-border-radius);
+				@include generate-btn(
+					/* name: */ default,
+					/* font-size: */ 12px,
+					/* color: */ #b1b1b1,
+					/* font-weight: */ 400,
+					/* line-height: */ 18px,
+					/* padding: */ 0 20px,
+					/* backgroundColor: */ transparent,
+					/* border: */ 0,
+					/* border-radius: */ 0,
+					/* text-transform: */ uppercase,
+					/* text-align: */ center);
+				@include generate-btn-hover(
+					/* name: */ default,
+					/* font-size: */ 12px,
+					/* color: */ #55b9c9,
+					/* font-weight: */ 400,
+					/* line-height: */ 18px,
+					/* padding: */ 0 20px,
+					/* backgroundColor: */ transparent,
+					/* border: */ 0,
+					/* border-radius: */ 0,
+					/* text-transform: */ uppercase,
+					/* text-align: */ center);
+				.uib-daypicker {
+					table {
+						thead {
+							tr {
+								th {
+									text-align: center;
+									padding-top: 5px;
+									padding-bottom: 5px;
+									border-bottom: 1px solid $btn-border-color;
+									small {
+										font: $heading-font;
+										color: $heading-color;
+									}
+								}
+							}
+						}
+						tbody {
+							@include generate-btn(
+								/* name: */ info,
+								/* font-size: */ 12px,
+								/* color: */ #55b9c9,
+								/* font-weight: */ 400,
+								/* line-height: */ 18px,
+								/* padding: */ 0 20px,
+								/* backgroundColor: */ #fff,
+								/* border: */ 0,
+								/* border-radius: */ 0,
+								/* text-transform: */ uppercase,
+								/* text-align: */ center);
+							@include generate-btn-hover(
+								/* name: */ info,
+								/* font-size: */ 12px,
+								/* color: */ #fff,
+								/* font-weight: */ 400,
+								/* line-height: */ 18px,
+								/* padding: */ 0 20px,
+								/* backgroundColor: */ #55b9c9,
+								/* border: */ 0,
+								/* border-radius: */ 0,
+								/* text-transform: */ uppercase,
+								/* text-align: */ center);
+						}
+					}
+				}
+				.uib-button-bar {
+					> .btn-group {
+						padding-left: 0;
+						&.btn-group + .btn-success {
+							height: 40px;
+						}
+					}
+					@include generate-btn(
+						/* name: */ info,
+						/* font-size: */ 12px,
+						/* color: */ #fff,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #b1b1b1,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+					@include generate-btn-hover(
+						/* name: */ info,
+						/* font-size: */ 12px,
+						/* color: */ #b1b1b1,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #fff,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+					@include generate-btn(
+						/* name: */ danger,
+						/* font-size: */ 12px,
+						/* color: */ #55b9c9,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #fff,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+					@include generate-btn-hover(
+						/* name: */ danger,
+						/* font-size: */ 12px,
+						/* color: */ #fff,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #55b9c9,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+					@include generate-btn(
+						/* name: */ success,
+						/* font-size: */ 12px,
+						/* color: */ #fff,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #55b9c9,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+					@include generate-btn-hover(
+						/* name: */ success,
+						/* font-size: */ 12px,
+						/* color: */ #55b9c9,
+						/* font-weight: */ 300,
+						/* line-height: */ 18px,
+						/* padding: */ 0 20px,
+						/* backgroundColor: */ #fff,
+						/* border: */ 0,
+						/* border-radius: */ 0,
+						/* text-transform: */ uppercase,
+						/* text-align: */ center);
+				}
+			}
+		}
+	}
+}

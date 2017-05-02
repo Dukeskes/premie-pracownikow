@@ -1,0 +1,5 @@
+var Role = {
+	ADMIN: 'ADMIN',
+
+	ANONYMOUS: 'ANONYMOUS'
+};

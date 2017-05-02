@@ -1,0 +1,44 @@
+// File Name: _dropdowns.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 09.01.2017
+// Dependencies:
+// ------------------------------------------------------------
+
+// |-----------------------
+// | Import generics
+// |-----------------------
+@import 'angular-ui/dropdown';
+// |-----------------------
+
+//@include generate-dropdown(
+//	/* name: */ default,
+//	/* font-size: */ .8em,
+//	/* color: */ $green,
+//	/* font-weight: */ normal,
+//	/* line-height: */ 2.45rem,
+//	/* padding: */ .5rem .75rem,
+//	/* backgroundColor: */ $green-light,
+//	/* border: */ $dropdown-border-width solid $dropdown-border-color,
+//	/* border-radius: */ 0,
+//	/* text-transform: */ uppercase,
+//	/* text-align: */ left,
+//	/* height: */ 2.45rem,
+//	/* Background Active item: */ $green-light
+//);
+
+.ui-select-bootstrap {
+	padding: 0;
+	.ui-select-match {
+		outline: none;
+		box-shadow: none;
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}
+body > .ui-select-bootstrap.open {
+	z-index: 2000;
+}

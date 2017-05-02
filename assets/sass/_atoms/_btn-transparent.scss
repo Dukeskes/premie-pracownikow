@@ -1,0 +1,16 @@
+// File Name: btn-transparent.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.btn-transparent {
+	@include button-variant($btn-transparent-color, $btn-transparent-bg, $btn-transparent-border);
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	&:hover {
+		color: $brand-primary;
+	}
+}

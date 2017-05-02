@@ -1,0 +1,26 @@
+// |-----------------------
+// | Import generics
+// |-----------------------
+@import 'bootstrap/nav';
+// |-----------------------
+@include generate-nav(
+    /* name: */ primary,
+    /* border-color: */ transparent,
+    /* border-width: */ 0,
+    /* padding: */ 0,
+    /* background: */ #fff,
+    /* item-padding: */ 5px,
+    /* item-active-padding: */ 5px,
+	/* item-color: */ #a0a0a0,
+	/* item-active-color: */ #a0a0a0,
+    /* item-font-weight: */ 300,
+    /* item-active-font-weight: */ 400,
+    /* item-font-size: */ 14px,
+    /* item-active-font-size: */ 14px,
+    /* item-background: */ #fff,
+    /* item-active-background: */ #fff,
+    /* item-text-transform: */ uppercase,
+    /* item-active-text-transform: */ uppercase,
+    /* border-radius*/ 0px,
+    /* item-border-radius */ 0px);
+

@@ -1,0 +1,26 @@
+// |-----------------------
+// | Import generics
+// |-----------------------
+@import 'bootstrap/navbar';
+// |-----------------------
+
+@include generate-navbar(
+			/* name: */ primary,
+			/* border-color: */ transparent,
+			/* border-width: */ 1px,
+			/* padding: */ 0,
+			/* background: */ #fff,
+			/* item-padding: */ 17.5px 0,
+			/* item-active-padding: */ 17.5px 0,
+			/* item-color: */ #a0a0a0,
+			/* item-active-color: */ #a0a0a0,
+			/* item-font-weight: */ 300,
+			/* item-active-font-weight: */ 700,
+			/* item-font-size: */ 12px,
+			/* item-active-font-size: */ 12px,
+			/* item-background: */ transparent,
+			/* item-active-background: */ transparent,
+			/* item-text-transform: */ uppercase,
+			/* item-active-text-transform: */ uppercase,
+			/* border-radius*/ 0px,
+			/* item-border-radius */ 0px);

@@ -1,0 +1,171 @@
+// File Name: _dropdown.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 09.01.2017
+// Dependencies:
+// ------------------------------------------------------------
+
+@mixin generate-dropdown($name, $fontSize, $color, $fontWeight, $lineHeight, $padding, $backgroundColor, $border, $borderRadius, $textTransform, $textAlign, $height, $backgroundActiveItem) {
+	.ui-select-container.ui-select-bootstrap {
+		.ui-select-search {
+			@include placeholder(.8em, $color, uppercase);
+			line-height: normal;
+			height: auto;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		> div {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		&.selectize-control.dropdown {
+			> .ui-select-match {
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				height: $height;
+				display: flex;
+				.btn.btn-default.form-control.ui-select-toggle {
+					padding: .5rem .75rem;
+					height: auto;
+					line-height: $lineHeight;
+					> span {
+						line-height: 1.7rem;
+						color: $color;
+						height: $height;
+						@include placeholder(.8em, $color, uppercase);
+					}
+				}
+			}
+			.ui-select-search {
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				padding: .5rem .75rem;
+				line-height: $lineHeight;
+				color: $color;
+				height: $height;
+			}
+		}
+		.ui-select-match {
+			display: inline-block;
+			line-height: normal;
+			> span {
+				display: inline-flex;
+				height: auto;
+				&.btn.btn-default.form-control.ui-select-toggle {
+					line-height: normal;
+					@include placeholder(.8em, $color, uppercase);
+				}
+				.ui-select-match-item {
+					background: $backgroundColor;
+					border: $border;
+					padding: 0;
+					vertical-align: middle;
+					height: $height;
+					margin-right: .1em;
+					margin-bottom: .1em;
+					&.btn.btn-default.btn-xs {
+						display: flex;
+					}
+					> span {
+						font-size: .8rem;
+						vertical-align: top;
+						display: inline-flex;
+						background: $green-light;
+						> span {
+							line-height: 1.9rem;
+							padding-top: .5em;
+							padding-bottom: .5em;
+							display: flex;
+							color: $white;
+							padding-left: .5rem;
+							vertical-align: middle;
+							padding-right: .5rem;
+						}
+					}
+					.ui-select-match-close {
+						vertical-align: middle;
+						background: $green-light;
+						opacity: 1;
+						color: $green-light;
+						text-shadow: none;
+						padding-right: .5em;
+						padding-left: 1em;
+						float: left;
+						padding-top: 1.3em;
+						padding-bottom: 1.3em;
+					}
+				}
+			}
+		}
+		.btn.btn-#{$name} {
+			width: 100%;
+		}
+		.btn.btn-default.btn-xs {
+			width: auto;
+			display: inline-block;
+		}
+		.btn.btn-#{$name},
+		> input {
+			padding: $padding;
+			border: $border;
+			font-size: $fontSize;
+			font-weight: normal;
+			outline: none;
+			@include roundedCorners($borderRadius);
+			&:focus {
+				outline: none;
+			}
+		}
+		> input {
+		}
+		.ui-select-match-text {
+			padding-right: 0;
+			> span {
+				display: block;
+				height: 1.5rem;
+				line-height: 1.5rem;
+			}
+		}
+		> .ui-select-choices {
+			border: $border;
+			@include roundedCorners($borderRadius);
+			margin-top: -.5px;
+			.ui-select-choices-row.active > span {
+				background: $backgroundActiveItem;
+			}
+		}
+		&.selectize-control.dropdown.ui-select-multiple {
+			padding: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			background: transparent;
+			input.ui-select-search {
+				border: $border;
+				font-size: $fontSize;
+				font-weight: normal;
+				border-radius: 0;
+				width: 100% !important;
+				box-sizing: border-box;
+				@include placeholder-color(#818a91);
+			}
+			&.form-control {
+				border: 0;
+				border-radius: 0;
+			}
+			.ui-select-match {
+				> span {
+					margin-right: .1em;
+				}
+				.ui-select-search {
+					margin-top: 0;
+				}
+				.close {
+					padding-top: 1px;
+					padding-left: 5px;
+					line-height: 2.1rem;
+				}
+			}
+		}
+	}
+}

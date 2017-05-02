@@ -1,0 +1,92 @@
+// ----------------------------------------------------------------------
+// Bootstrap checkbox (square)
+// ----------------------------------------------------------------------
+// example: 
+//
+//
+//@include generate-checkbox(
+//	/* $name: */ primary-small,
+//	/* $width: */ 12px,
+//	/* $height: */ 12px,
+//  /* $active-width: */ 6px,
+//  /* $active-height: */6px,
+//	/* $background: */ #fff,
+//	/* $active-inner-background: */ #48becc,
+//	/* $border-color: */ #48becc,
+//	/* $active-border-color: */ #48becc,
+//	/* $active-box-shadow-position: */ 0,
+//	/* $border-width: */ 1px,
+//	/* $active-border-width: */ 1px,
+//	/* $border-radius */ 0,
+//	/* $active-border-radius: */ 0,
+//	/* $active-border-radius-inner: */ 0,
+//	/* $animation-time) */ .2s );
+//
+// ----------------------------------------------------------------------
+
+@mixin generate-checkbox(
+	$name,
+	$width,
+	$height,
+	$active-width,
+	$active-height,
+	$background,
+	$active-inner-background,
+	$border-color,
+	$active-border-color,
+	$active-box-shadow-position,
+	$border-width,
+	$active-border-width,
+	$border-radius,
+	$active-border-radius,
+	$active-border-radius-inner,
+	$animation-time) {
+	.checkbox.checkbox-#{$name} {
+		display: inline-block;
+		width: $width;
+		height: $height;
+		vertical-align: middle;
+		background: $background;
+		border-color: $border-color;
+		border-width: $border-width;
+		border-style: solid;
+        margin-bottom: .25rem;
+		@include roundedCorners($border-radius);
+		@include single-transition(all, $animation-time, ease-in-out, 0s);
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 0;
+			height: 0;
+			top: ($height)/2;
+			left: ($width)/2;
+			background: transparent;
+			@include single-transition(all, $animation-time, ease-in-out, 0s);
+			padding: $height $width;
+		}
+		&:hover {
+			@include single-transition(all, $animation-time, ease-in-out, 0s);
+			cursor: pointer;
+		}
+		&:checked,
+		&.checked {
+			@include single-transition(all, $animation-time, ease-in-out, 0s);
+			position: relative;
+			&:after {
+				@include single-transition(all, $animation-time, ease-in-out, .2s);
+				background: $active-inner-background;
+				width: $active-width;
+				height: $active-height;
+				top: ($height - $active-height - ($border-width*2))/2;
+				left: ($width - $active-width - ($border-width*2))/2;
+			}
+		}
+		&:disabled,
+		&.disabled {
+			cursor: not-allowed;
+			opacity: .3;
+		}
+	}
+}

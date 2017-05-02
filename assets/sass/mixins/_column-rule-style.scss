@@ -1,0 +1,7 @@
+@mixin column-rule-style($value) {
+	-webkit-column-rule-style:  $value;
+	-moz-column-rule-style:     $value;
+	-o-column-rule-style:       $value;
+	-ms-column-rule-style:      $value;
+	column-rule-style:      	$value;
+}

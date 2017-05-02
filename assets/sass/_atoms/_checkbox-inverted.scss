@@ -1,0 +1,19 @@
+// File Name: _custom-checkbox-inverted.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.checkbox-inverted {
+	.custom-control-description {
+		color: $white;
+		font-weight: 300;
+	}
+	.custom-control-indicator {
+		box-shadow: $custom-control-inverted-indicator-box-shadow;
+	}
+	.custom-control-input:checked ~ .custom-control-indicator {
+		box-shadow: $custom-control-inverted-indicator-box-shadow;
+	}
+}

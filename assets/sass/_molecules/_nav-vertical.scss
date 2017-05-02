@@ -1,0 +1,72 @@
+// File Name: _nav-vertical.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.nav.nav-vertical {
+	.nav-link {
+		padding: 1.5em 0 1em 0;
+		position: relative;
+		span {
+			text-transform: uppercase;
+			color: $gray-dark;
+			font-size: 1em;
+			display: inline-block;
+			&.icon {
+				width: 5em;
+				text-align: center;
+				i {
+					font-size: 1.2em;
+					color: $gray-dark;
+					@include single-transition(all, .3s, linear, 0);
+				}
+			}
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 100%;
+			height: .1em;
+			background: $blue-lightest;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 0%;
+			height: .1em;
+			background: $brand-primary;
+			@include single-transition(all, .3s, linear, 0);
+		}
+		&:hover {
+			span {
+				color: $green-darker;
+				&.icon {
+					i {
+						color: $brand-primary;
+						@include single-transition(all, .3s, linear, 0);
+					}
+				}
+			}
+			&:after {
+				width: 100%;
+				@include single-transition(all, .3s, linear, 0);
+			}
+		}
+		&.active {
+			span {
+				color: $brand-primary;
+				&.icon {
+					i {
+						color: $brand-primary;
+					}
+				}
+			}
+		}
+	}
+}

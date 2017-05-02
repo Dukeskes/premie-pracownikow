@@ -1,0 +1,67 @@
+// File Name: _form-horizontal.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.form-group-horizontal {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	> div {
+		&:nth-child(1) {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		h5 {
+			font-size: .8em;
+			font-weight: 600;
+		}
+		p {
+			color: $gray-light;
+			font-weight: 300;
+			margin-bottom: 0;
+			font-size: .8em;
+		}
+	}
+	+ .form-group-extension {
+		padding-bottom: 0em;
+		max-height: 0;
+		opacity: 0;
+		@include single-transition(all, .6s, linear, 0s);
+		* {
+			max-height: 0;
+			opacity: 0;
+			@include single-transition(all, .4s, linear, 0s);
+		}
+		.items {
+			.item {
+				padding-bottom: $spacer/2;
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+	&.active + .form-group-extension {
+		padding-bottom: 1.5em;
+		max-height: 100em;
+		opacity: 1;
+		@include single-transition(all, .6s, linear, 0s);
+		* {
+			max-height: 100em;
+			opacity: 1;
+			@include single-transition(all, .4s, linear, 0s);
+		}
+	}
+	&.simple-form {
+		> div {
+			> div {
+				padding-bottom: $spacer/2;
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+

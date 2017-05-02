@@ -1,0 +1,134 @@
+// File Name: _table-horizontal.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.table-horizontal {
+	padding-bottom: .5rem;
+	margin-top: 1rem;
+	&.table {
+		margin-top: 0;
+	}
+	thead {
+		tr {
+			th {
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
+				font-weight: 300;
+				border: 0;
+				vertical-align: middle;
+				i {
+					margin-left: .75em;
+					font-size: .8em;
+					color: $gray-lighter;
+				}
+				&:hover {
+					cursor: pointer;
+					i {
+						color: $gray;
+					}
+				}
+				&.sort-active {
+					i {
+						color: $brand-primary;
+					}
+				}
+				.custom-control.custom-checkbox {
+					margin: 0;
+					vertical-align: middle;
+					.custom-control-indicator {
+						margin-left: 0;
+						vertical-align: middle;
+					}
+				}
+				&:nth-child(1){
+					text-align: center;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				font-size: .8em;
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
+				border: 0;
+				color: $gray-dark;
+				vertical-align: middle;
+				span {
+					margin-left: .5em;
+				}
+				p {
+					margin-bottom: 0;
+				}
+				.btn {
+					&:nth-child(1){
+						padding-left: 0;
+					}
+				}
+				.custom-control.custom-checkbox {
+					margin: 0;
+					.custom-control-indicator {
+						margin-left: 0;
+					}
+				}
+				&:nth-child(1){
+					text-align: center;
+					vertical-align: middle;
+				}
+			}
+			&.row-warning {
+				td {
+					color: $brand-warning;
+					.bar-progress {
+						border-color: $brand-warning;
+						.progress-value {
+							background-image: url($progress-image-warning);
+						}
+					}
+				}
+			}
+			&.row-danger {
+				td {
+					color: $brand-danger;
+					.bar-progress {
+						border-color: $brand-danger;
+						.progress-value {
+							background-image: url($progress-image-danger);
+						}
+					}
+				}
+			}
+			&.row-success {
+				td {
+					color: $brand-primary;
+					.bar-progress {
+						border-color: $brand-primary;
+						.progress-value {
+							background-image: url($progress-image-success);
+						}
+					}
+				}
+			}
+			td {
+				&.color-stay {
+					color: $gray-dark;
+				}
+			}
+			&.active {
+				td {
+					background: $green-light;
+				}
+			}
+			&:hover {
+				td {
+					background: $gray-lightest;
+				}
+			}
+		}
+	}
+}

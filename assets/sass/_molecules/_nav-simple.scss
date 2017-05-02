@@ -1,0 +1,20 @@
+// File Name: _nav-simple.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 20.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.nav-simple {
+	.form-group {
+		margin-bottom: 0;
+		display: inline-block;
+		label {
+			display: inline-block;
+			margin-right: 1em;
+		}
+		> div {
+			display: inline-block;
+		}
+	}
+}

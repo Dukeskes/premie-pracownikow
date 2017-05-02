@@ -1,0 +1,15 @@
+// |-----------------------
+// | Import dots
+// |-----------------------
+@import 'bootstrap/dot';
+// |-----------------------
+
+@include generate-dot(
+	/* name: */ green,
+	/* width: */ .5em,
+	/* height: */ .5em,
+	/* background: */ $green,
+	/* border-radius */ 50%,
+	/* border-width: */ 0,
+	/* border-color: */ transparent
+	); 

@@ -1,0 +1,58 @@
+// File Name: _nav.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+
+$navbar-font-family: $font-family-secondary;
+$navbar-font-weight: 500;
+$navbar-font-size: 0.85em;
+
+
+
+.nav-primary {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: .5em;
+	width: 100%;
+	font-family: $navbar-font-family;
+	.nav-item {
+		.nav-link {
+			border-width: 0 0 .1em 0;
+			border-style: solid;
+			border-color: $blue-lightest;
+			color: $gray-dark;
+			font-weight: $navbar-font-weight;
+			background: transparent;
+			font-size: $navbar-font-size;
+			text-transform: uppercase;
+			position: relative;
+			padding-bottom: $spacer/2;
+			padding-top: $spacer/2;
+			&:after {
+				content: "";
+				position: absolute;
+				width: 0;
+				margin-left: 50%;
+				height: .2em;
+				top: 100%;
+				left: 0;
+				background: transparent;
+				@include single-transition(all, .2s, linear, 0);
+			}
+			&.active,
+			&:hover {
+				color: $gray-dark;
+				background: transparent;
+				&:after {
+					background: $brand-primary;
+					margin-left: 0;
+					width: 100%;
+					@include single-transition(all, .2s, linear, 0);
+				}
+			}
+		}
+	}
+}

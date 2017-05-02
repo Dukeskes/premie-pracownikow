@@ -1,0 +1,14 @@
+// File Name: _inputs.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 21.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.ui-select-container.ui-select-bootstrap.ui-select-multiple input.ui-select-search {
+	//background: $blue-light !important;
+	border: 0;
+	height: 2.45rem;
+	line-height: 2.45rem;
+	//@include placeholder(.8em, $brand-primary, uppercase);
+}

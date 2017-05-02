@@ -1,0 +1,99 @@
+// File Name: _multipleSelect.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 21.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.ui-select-container.ui-select-bootstrap {
+	input.ui-select-search {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.ui-select-choices.ui-select-choices-content.ui-select-dropdown.dropdown-menu {
+		max-height: 0;
+		display: block !important;
+		opacity: 0;
+		border: $dropdown-border-width solid $dropdown-border-color;
+		@include transition(all .5s ease-in-out);
+	}
+	&.open {
+		.ui-select-choices.ui-select-choices-content.ui-select-dropdown.dropdown-menu {
+			display: block;
+			padding: $dropdown-padding-y 0;
+			//max-height: $dropdown-max-height;
+			overflow-y: scroll;
+			opacity: 1;
+			border: $dropdown-border-width solid $dropdown-border-color;
+			@include transition(all .5s ease-in-out);
+			li {
+				.ui-select-choices-row {
+					> span {
+						background: $dropdown-bg;
+						//padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+						> span {
+							padding: 0;
+							//line-height: $dropdown-item-line-height;
+							color: $dropdown-link-color;
+						}
+					}
+					&.active {
+						> span {
+							background: $dropdown-link-active-bg;
+							> span {
+								color: $dropdown-link-active-color;
+							}
+						}
+					}
+					&:hover {
+						> span {
+							background: $dropdown-link-hover-bg;
+							> span {
+								color: $dropdown-link-hover-color;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.ui-select-container.ui-select-bootstrap.selectize-control.dropdown {
+			.ui-select-search {
+				margin-top: 0;
+				margin-bottom: 0;
+				text-align: left;
+			}
+			.ui-select-choices.ui-select-choices.ui-select-choices-content.ui-select-dropdown {
+				overflow-y: initial;
+				max-width: 100%;
+				> .ui-select-choices-group {
+					.ui-select-choices-row {
+						span {
+							background: $brand-primary;
+							//color: $blue-light;
+							width: 100%;
+							font-size: .8em;
+						}
+						&.active {
+							span {
+								background: $brand-primary;
+								color: $white;
+							}
+						}
+						&:hover {
+							span {
+								background: $gray;
+								//color: $blue-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//dropdown
+	&.selectize-control.dropdown > .ui-select-match {
+		> .btn {
+			cursor: pointer;
+		}
+	}
+}

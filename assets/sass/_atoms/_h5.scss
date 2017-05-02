@@ -1,0 +1,16 @@
+// File Name: h4.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 28.03.2017
+// Dependencies:
+// ------------------------------------------------------------
+h5 {
+	color: $blue-darkest;
+	text-transform: uppercase;
+	&.regular {
+		color: $blue-dark;
+		text-transform: none;
+		font-weight: 400;
+	}
+}

@@ -1,0 +1,30 @@
+// File Name: contentHeader.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 22.02.2017
+// Dependencies:
+// ------------------------------------------------------------
+.header-container {
+	border-bottom: .1em solid $gray-lightest;
+	padding: .9em 2.750em;
+	background: $white;
+	font-family: $font-family-secondary;
+	h5 {
+		margin-bottom: 0;
+		font-size: 1.15em;
+		font-weight: 400;
+		line-height: 3rem;
+		color: $gray-dark;
+	}
+	.nav-buttons.right {
+		.form-group {
+			margin-right: 0;
+			.dropdown {
+				.btn {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

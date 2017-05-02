@@ -1,0 +1,32 @@
+// File Name: _content-header.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.content-heading {
+	border-bottom: 1px solid $blue-lightest;
+	padding-bottom: .25em;
+	padding-top: .75em;
+	> div {
+		.pd-holder {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-bottom: .5em;
+			i {
+				font-size: 2em;
+				margin-right: .5em;
+				color: $gray-dark;
+			}
+			h4 {
+				margin-bottom: 0;
+				text-transform: uppercase;
+				font-weight: 600;
+				font-size: .8em;
+				color: $gray-dark;
+			}
+		}
+	}
+}

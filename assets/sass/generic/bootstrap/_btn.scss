@@ -1,0 +1,114 @@
+// ----------------------------------------------------------------------
+// Bootstrap button
+// ----------------------------------------------------------------------
+// example: 
+//
+//  @include generate-btn(
+//      /* name: */ dupa,
+//      /* font-size: */ 14px,
+//      /* color: */ #f00,
+//      /* font-weight: */ 900,
+//      /* line-height: */ 18px,
+//      /* padding: */ 10px 20px,
+//      /* backgroundColor: */ #00f,
+//      /* border: */ 3px solid #0f0,
+//      /* border-radius: */ 50%,
+//      /* text-transform: */ uppercase,
+//      /* text-align: */ center);
+// ----------------------------------------------------------------------
+
+@mixin generate-btn($name, $fontSize, $color, $fontWeight, $lineHeight, $padding, $backgroundColor, $border, $borderRadius, $textTransform, $textAlign) {
+	.btn.btn-#{$name} {
+		font-size: $fontSize;
+		color: $color;
+		font-weight: $fontWeight;
+		line-height: $lineHeight;
+		padding: $padding;
+		background-color: $backgroundColor;
+		border: $border;
+		text-align: $textAlign;
+        text-transform: $textTransform;
+		@include roundedCorners($borderRadius);
+		cursor: pointer;
+		display: inline-block;
+  		box-sizing: border-box;
+		box-shadow: none;
+  		outline: none;
+		span,
+		i {
+			font-size: $fontSize;
+			color: $color;
+			font-weight: $fontWeight;
+			line-height: $lineHeight;
+			vertical-align: middle;
+		}
+		&:hover,
+		&:active
+		&:focus,
+		&:visited,
+		&.active {
+			color: $backgroundColor;
+			background: $color;
+			border-color: $color;
+			text-decoration: none;
+			span,
+			i {
+				color: $backgroundColor;
+			}
+		}
+		&:disabled,
+		&.disabled {
+			cursor: default;
+			@include opacity(.3);
+			&:hover,
+			&:active
+			&:focus,
+			&:visited,
+			&.active {
+				color: $color;
+				background: $backgroundColor;
+				border: $border;
+				text-decoration: none;
+				span,
+				i {
+					color: $color;
+				}
+			}
+		}
+	}
+	&.btn-chevron {
+	
+	}
+}
+
+@mixin generate-btn-hover($name, $fontSize, $color, $fontWeight, $lineHeight, $padding, $backgroundColor, $border, $borderRadius, $textTransform, $textAlign) {
+	.btn.btn-#{$name}:hover,
+	.btn.btn-#{$name}.hover,
+	.btn.btn-#{$name}:active,
+	.btn.btn-#{$name}.active,
+	.btn.btn-#{$name}.focus  {
+		font-size: $fontSize;
+		color: $color;
+		font-weight: $fontWeight;
+		line-height: $lineHeight;
+		padding: $padding;
+		background-color: $backgroundColor;
+		border: $border;
+		text-align: $textAlign;
+		text-transform: $textTransform;
+		@include roundedCorners($borderRadius);
+		cursor: pointer;
+		display: inline-block;
+		box-sizing: border-box;
+		box-shadow: none;
+		outline: none;
+		span,
+		i {
+			font-size: $fontSize;
+			color: $color;
+			font-weight: $fontWeight;
+			line-height: $lineHeight;
+			vertical-align: middle;
+		}
+	}
+}

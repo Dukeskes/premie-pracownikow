@@ -1,0 +1,38 @@
+// File Name: _search-group.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.search-group {
+	margin: 0 $spacer;
+	border-bottom: .1em solid $blue-lightest;
+	input {
+		border: 0;
+		background: transparent;
+		box-shadow: none;
+		font-weight: 100;
+		font-size: .75em;
+		@include border-radius(0);
+		@include placeholder(.75rem, $blue-light, uppercase);
+		padding-bottom: 0;
+		text-align: left;
+		&:active,
+		&:focus {
+			background: transparent;
+		}
+	}
+	.input-group-btn {
+		.btn {
+			border: 0;
+			padding-right: .5em;
+			padding-left: .5em;
+			background: transparent;
+		}
+	}
+	i {
+		color: $blue-light;
+		margin-right: .25em;
+	}
+}

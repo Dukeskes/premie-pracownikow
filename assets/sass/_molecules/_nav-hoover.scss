@@ -1,0 +1,77 @@
+// File Name: _nav-hoover.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.nav-hoover {
+	.dot {
+		position: relative;
+		.btn-holder {
+			position: absolute;
+			right: 0;
+			top: -50%;
+			margin-top: -.8rem;
+			opacity: 0;
+			@include single-transition(all, .4s, linear, 0s);
+			.btn-group {
+				display: flex;
+				align-items: center;
+				position: relative;
+				.btn {
+					width: 0rem;
+					height: 2rem;
+					line-height: 2rem;
+					text-align: center;
+					padding: 0;
+					border: 0;
+					i {
+						margin-right: 0;
+						font-size: .75rem;
+					}
+				}
+				&:after {
+					left: 100%;
+					top: 50%;
+					content: " ";
+					border: .5em solid rgba(136, 183, 213, 0);
+					border-left-color: $brand-primary;
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					margin-top: -.5em;
+				}
+			}
+		}
+	}
+	&.more-horizontal {
+		.dot {
+			.btn-holder {
+				margin-top: -.65rem;
+			}
+		}
+		&:hover {
+			.dot {
+				.btn-holder {
+					right: 1em;
+				}
+			}
+		}
+	}
+	&:hover {
+		.dot {
+			.btn-holder {
+				right: .75em;
+				opacity: 1;
+				@include single-transition(all, .4s, linear, 0s);
+				.btn-group {
+					.btn {
+						width: 2rem;
+					}
+				}
+			}
+		}
+	}
+}

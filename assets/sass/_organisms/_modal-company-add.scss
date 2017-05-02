@@ -1,0 +1,38 @@
+// File Name: _modal-company-add.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 27.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.modal-company-add {
+	.modal-body {
+		overflow: hidden;
+		&.choosen-manual {
+			.item-manual {
+				max-width: 100%;
+				flex: 0 0 100%;
+				@include single-transition(all, .4s, linear, 0s);
+			}
+			.item-import {
+				margin-right: -50%;
+				border: 0;
+				opacity: 0;
+				@include single-transition(all, .4s, linear, 0s);
+			}
+		}
+		&.choosen-import {
+			.item-manual {
+				margin-left: -50%;
+				opacity: 0;
+				@include single-transition(all, .4s, linear, 0s);
+			}
+			.item-import {
+				max-width: 100%;
+				flex: 0 0 100%;
+				border: 0;
+				@include single-transition(all, .4s, linear, 0s);
+			}
+		}
+	}
+}

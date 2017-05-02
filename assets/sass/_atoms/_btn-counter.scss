@@ -1,0 +1,25 @@
+// File Name: _btn-counter.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.btn {
+	position: relative;
+	span {
+		&.counter {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 2rem;
+			color: $white;
+			height: 2rem;
+			margin-right: -1rem;
+			margin-top: -1rem;
+			background: $red;
+			@include border-radius(50%);
+			border: .2em solid $white;
+		}
+	}
+}

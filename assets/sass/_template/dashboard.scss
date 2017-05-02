@@ -1,0 +1,16 @@
+// File Name: _dashboard.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 18.08.2016
+// Dependencies:
+// ------------------------------------------------------------
+main {
+	background: $background-color;
+	padding-top: $spacer;
+	min-height: 100vh;
+	> .content {
+		padding-left: 4em;
+		padding-right: 5em;
+	}
+}

@@ -1,0 +1,58 @@
+// File Name: _table-header.scss
+// Description: 
+// Used by: main.scss
+// Author: BartDukes
+// Date: 19.04.2017
+// Dependencies:
+// ------------------------------------------------------------
+.table-header {
+	position: absolute;
+	width: 100%;
+	background: $brand-primary;
+	padding: 0 .70rem;
+	opacity: 1;
+	z-index: 50;
+	@include single-transition(all, .5s, linear, 0s);
+	* {
+		@include single-transition(all, .5s, linear, 0s);
+		max-height: 15em;
+	}
+	&.inactive {
+		opacity: 0;
+		@include single-transition(all, .5s, linear, 0s);
+		* {
+			@include single-transition(all, .5s, linear, 0s);
+			max-height: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	> div {
+		> div {
+			&.left {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			&.right {
+				display: flex;
+				justify-content: flex-end;
+			}
+			.custom-control.custom-checkbox {
+				margin: 0;
+				.custom-control-description {
+					margin-left: 1rem;
+				}
+			}
+			.btn {
+				text-transform: none;
+				font-size: .8rem;
+				padding-top: 1.25em;
+				padding-bottom: 1.25em;
+				display: flex;
+				align-items: center;
+				@include border-radius(0);
+			}
+		}
+	}
+}

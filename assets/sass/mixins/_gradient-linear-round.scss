@@ -1,0 +1,16 @@
+// ----------------------------------------------------------------------
+
+  // Linear Gradient angle
+
+// ----------------------------------------------------------------------
+
+ // example: @include linear-gradient-round(50dag, 50dag, #cccccc, #333333);
+
+@mixin gradientLinearRound($radius-a, $radius-b, $radius-c, $color-progress, $color-bg, $color-full){
+    background-image:    -moz-linear-gradient($radius-a, $color-full 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -moz-linear-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+    background-image:        -webkit-gradient($radius-a, $color-full 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+    background-image: -webkit-linear-gradient($radius-a, $color-full 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+    background-image:      -o-linear-gradient($radius-a, $color-full 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -o-linear-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+    background-image:     -ms-linear-gradient($radius-a, $color-full 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -ms-linear-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+    background-image:         linear-gradient($radius-a, $color-full $radius-c, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient($radius-b, $color-progress 50%, $color-bg 50%, $color-bg);
+}
