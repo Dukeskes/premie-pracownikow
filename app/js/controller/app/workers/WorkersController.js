@@ -1,5 +1,5 @@
-angular.module(APP_ID).controller('tableController', ['breadcrumbsBuilder', 'tableBuilder', 'userService',
-	function(breadcrumbsBuilder, tableBuilder, userService) {
+angular.module(APP_ID).controller('workersController', ['tableBuilder', 'userService',
+	function(tableBuilder, userService) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
@@ -12,8 +12,6 @@ angular.module(APP_ID).controller('tableController', ['breadcrumbsBuilder', 'tab
 		vm.toggleOrder = _toggleOrder;
 
 		(function _init() {
-			breadcrumbsBuilder.init()
-				.addItem(State.Token.TABLE);
 
 			vm.table.spinnerKey(SpinnerKey.TABLE)
 				.createColumn('id', 'Identyfikator')

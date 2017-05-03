@@ -9,7 +9,7 @@
 	"STATE.DASHBOARD": "Pulpit",
 	"STATE.DIALOG": "Dialogi",
 	"STATE.SPINNER": "Kręcioły",
-	"STATE.TABLE": "Tabela",
+	"STATE.WORKERS": "Lista pracowników",
 	"STATE.ERROR": "Błąd",
 
 	"APP.TITLE": "Template",
