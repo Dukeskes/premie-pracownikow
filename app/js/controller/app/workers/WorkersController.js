@@ -11,6 +11,7 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerS
 
 		vm.addWorker = _addWorker;
 		vm.editWorker = _editWorker;
+		vm.removeWorker = _removeWorker;
 		vm.toggleOrder = _toggleOrder;
 		vm.loadData = _loadData;
 
@@ -40,5 +41,11 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerS
 
 		function _editWorker(_loadData, workerId) {
 			workerDialog.show(_loadData, workerId);
+		}
+
+		function _removeWorker(workerId) {
+			workerService.delete(workerId).then(function(){
+				_loadData();
+			});
 		}
 	}]);

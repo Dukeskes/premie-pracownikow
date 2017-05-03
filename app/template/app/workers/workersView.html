@@ -55,8 +55,13 @@
 						<span class="dot">
 							<div class="btn-holder">
 								<div class="btn-group">
-									<a class="btn btn-primary" ng-click="vm.editWorker(vm.loadData, entry.id)"><i class="fa fa-pencil"></i></a>
-									<a class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+									<a class="btn btn-primary"
+									   ng-click="vm.editWorker(vm.loadData, entry.id)">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a class="btn btn-primary" ng-click="vm.removeWorker(entry.id)">
+										<i class="fa fa-trash-o"></i>
+									</a>
 								</div>
 							</div>
 						</span>

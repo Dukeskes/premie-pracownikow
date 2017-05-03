@@ -52,4 +52,16 @@ angular.module(APP_ID).run(['$httpBackend', function($httpBackend) {
 		return [ResponseCode.NOT_FOUND, 'ERROR.NOT_FOUND'];
 	});
 
+
+	$httpBackend.whenDELETE(/^ws\/worker\/([0-9]+)/, undefined, ['id']).respond(function(method, url, data, headers, params) {
+		for (var i = 0; i < Database.workers.length; ++i) {
+			var worker = Database.workers[i];
+			if (worker.id == params.id) {
+				Database.workers.splice(i, 1);
+				return [ResponseCode.OK, {}];
+			}
+		}
+		return [ResponseCode.NOT_FOUND, 'ERROR.NOT_FOUND'];
+	});
+
 }]);
