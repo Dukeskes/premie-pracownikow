@@ -103,3 +103,9 @@ article {
 .no-border {
 	border: 0 !important;
 }
+a,
+.btn,
+button {
+	outline: none !important;
+	box-shadow: none !important;
+}

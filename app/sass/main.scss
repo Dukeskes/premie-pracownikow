@@ -154,6 +154,7 @@
 @import "_molecules/v-list";
 @import "_molecules/search-group";
 @import "_molecules/dropdown-group";
+@import "_molecules/dropdown";
 @import "_molecules/content-heading";
 @import "_molecules/content-vertical";
 @import "_molecules/more";
@@ -178,7 +179,6 @@
 @import "_organisms/header-content";
 @import "_organisms/section-chart";
 @import "_organisms/section-horizontal-details";
-@import "_organisms/modal-company-add";
 
 // ----------------------------------------------------------------------
 // concept - to remove dev tests
@@ -190,6 +190,7 @@
 // ----------------------------------------------------------------------
 @import "_template/login";
 @import "_template/dashboard";
+@import "_template/modal";
 
 
 body {

@@ -1,0 +1,78 @@
+<header class="col-12 content-forms">
+	<div class="row form-elements">
+		<div class="col-9"><h3>Lista pracowników</h3>
+			<p class="gray">Lista potencjalnych pracowników, którzy powinni zostać nagrodzeni</p>
+		</div>
+		<div class="col-3 column-status">
+			<p class="element-count">
+				<span>{{ vm.table.entriesCount() }}</span> pracowników
+			</p>
+		</div>
+	</div>
+</header>
+<nav class="row nav-content">
+	<ul class="nav nav-primary nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link">
+				<i class="fa fa-download"></i>
+				Exportuj
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link">
+				<i class="fa fa-upload"></i>
+				Importuj
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" ng-click="vm.addWorker()">
+				<i class="fa fa-plus"></i>
+				Dodaj pracownika
+			</a>
+		</li>
+	</ul>
+</nav>
+<article class="col-sm-12 table-horizontal" spinner="{{vm.SpinnerKey.TABLE}}">
+	<div class="row">
+		<table class="table"
+		       ng-table="vm.table.toNgTableParams()">
+			<thead>
+				<tr>
+					<th ng-repeat="column in vm.table.getColumns()"
+					    ng-click="vm.toggleOrder(column.id)">
+						{{column.name}}
+						<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''"
+						   class="fa"></i>
+					</th>
+					<th>Akcje</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="entry in $data">
+				<td ng-repeat="column in vm.table.getColumns()">
+					<p>{{entry[column.id]}}</p>
+				</td>
+				<td>
+					<div class="more more-vertical nav-hoover">
+						<span class="dot"></span>
+						<span class="dot">
+							<div class="btn-holder">
+								<div class="btn-group">
+									<a class="btn btn-primary"
+									   ng-click="vm.editWorker(vm.loadData, entry.id)">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a class="btn btn-primary" ng-click="vm.removeWorker(entry.id)">
+										<i class="fa fa-trash-o"></i>
+									</a>
+								</div>
+							</div>
+						</span>
+						<span class="dot"></span>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</article>

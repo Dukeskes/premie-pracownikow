@@ -94,13 +94,12 @@
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
 $white-dark: #f7f7f7 !default;
-$blue-darkest: #292d37 !default;
+$blue-darkest: #10222B !default;
 $blue-dark: #383c45 !default;
-$green-darker: #083f3a !default;
-$green-dark: #267571 !default;
-$green: #3aafa4 !default;
-$green-light: #f2f9f8 !default;
-$green-lighter: #f0f0f3 !default;
+$green-dark: #95AB63 !default;
+$green: #BDD684 !default;
+$green-light: #E2F0D6 !default;
+$green-lighter: #F6FFE0 !default;
 $blue: #268cff !default;
 $blue-light: #9CB3CF !default;
 $blue-lightest: #E9EFF4 !default;
@@ -122,13 +121,13 @@ $brand-warning:             $yellow !default;
 $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
 
-$background-color:          #F4F7F9 !default;
+$background-color:          $gray-lighter !default;
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded:            true !default;
+$enable-rounded:            false !default;
 $enable-shadows:            true !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
@@ -249,7 +248,7 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 $font-family-current:    'Lato', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, !default;
-$font-family-secondary: 'futura-pt', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, !default;
+$font-family-secondary: 'Lato', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, !default;
 $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
@@ -324,9 +323,9 @@ $list-inline-padding: 5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius:          0rem !default;
+$border-radius-lg:       0rem !default;
+$border-radius-sm:       0rem !default;
 
 $component-active-color: $white !default;
 $component-active-bg:    $brand-primary !default;
@@ -378,7 +377,7 @@ $btn-primary-color:              $white !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             $btn-primary-bg !default;
 
-$btn-secondary-color:            $blue-darkest !default;
+$btn-secondary-color:            $green-lighter !default;
 $btn-secondary-bg:               transparent !default;
 $btn-secondary-border:           $brand-primary !default;
 
@@ -586,7 +585,7 @@ $dropdown-bg:                    $white !default;
 $dropdown-border-color:          rgba($blue-dark,.15) !default;
 $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            $gray-lighter !default;
-$dropdown-box-shadow:            0 .5rem 1rem rgba($blue-dark,.175) !default;
+$dropdown-box-shadow:            0 !default;
 
 $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
@@ -624,7 +623,7 @@ $navbar-border-radius:              $border-radius !default;
 $navbar-padding-x:                  $spacer !default;
 $navbar-padding-y:                  0 !default;
 
-$navbar-brand-padding-y:            1.25rem !default;
+$navbar-brand-padding-y:            0rem !default;
 $navbar-brand-padding-x:            2.25rem !default;
 
 $navbar-toggler-padding-x:           .75rem !default;

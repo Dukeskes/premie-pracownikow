@@ -1,0 +1,84 @@
+<div class="modal-header">
+	<div class="container-fluid">
+		<div class="row">
+			<header class="col-8 form-elements text-left">
+				<h3 ng-hide="vm.isEdit">Dodaj pracownika</h3>
+				<h3 ng-show="vm.isEdit">Edytuj pracownika</h3>
+				<p ng-hide="vm.isEdit"
+				   class="gray">Uzupełnij dane brakującego pracownika</p>
+				<p ng-show="vm.isEdit"
+				   class="gray">Edytuj nieaktualne dane pracownika</p>
+			</header>
+			</header>
+			<header class="col-4 bar-close text-right">
+				<a class="btn btn-secondary"
+				   ng-click="vm.close()">
+					<i class="fa fa-close"></i>
+					<span>zamknij</span>
+				</a>
+			</header>
+		</div>
+	</div>
+</div>
+<div class="modal-body">
+	<section class="row form-elements">
+		<article class="col-12 no-border">
+			<form name="workerDialogForm" id="workerDialogForm">
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-name">Imię</label>
+						<input class="form-control"
+						       id="worker-name"
+						       type="text"
+						       aria-describedby="workerName"
+						       name="name"
+						       ng-model="vm.worker.name"
+						       ng-class="{error: (workerDialogForm.name.$invalid && (!workerDialogForm.name.$pristine || vm.showErrors ))}"
+						       placeholder="Krzysztof"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-surname">Nazwisko</label>
+						<input class="form-control"
+						       id="worker-surname"
+						       type="text"
+						       aria-describedby="workerSurname"
+						       name="surname"
+						       ng-model="vm.worker.surname"
+						       ng-class="{error: (workerDialogForm.surname.$invalid && (!workerDialogForm.surname.$pristine || vm.showErrors ))}"
+						       placeholder="Golonka"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-birthdate">Data urodzenia</label>
+						<input class="form-control"
+						       id="worker-birthdate"
+						       type="text"
+						       aria-describedby="workerBirthDate"
+						       name="birthDate"
+						       ng-model="vm.worker.birthDate"
+						       ng-class="{error: (workerDialogForm.birthDate.$invalid && (!workerDialogForm.birthDate.$pristine || vm.showErrors ))}"
+						       placeholder="25.02.2015"
+						       required>
+					</div>
+				</div>
+			</form>
+		</article>
+	</section>
+</div>
+<div class="modal-footer">
+	<footer class="row">
+		<div class="col-12 text-right">
+			<a class="btn btn-primary"
+			   spinner="{{vm.SpinnerKey.SAVE_BUTTON}}"
+			   ng-click="vm.save(workerDialogForm.$invalid)">
+				<span>Zapisz</span>
+				<i class="fa fa-chevron-right"></i>
+			</a>
+		</div>
+	</footer>
+</div>

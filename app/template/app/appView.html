@@ -1,51 +1,66 @@
-<div class="page">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xl-2 col-lg-4 page-sidebar">
-				<div class="text-center box-profile">
-					<p>{{'APP.TITLE' | translate}}</p>
-				</div>
-				<div class="box-menu">
-					<ul class="menu-items">
-						<li class="item" ng-repeat="item in vm.menu.items" ui-sref-active="active" ng-click="vm.menu.activeIndex = $index" ng-class="vm.getMenuItemClass($index)" ng-mouseenter="vm.menu.mouseoverIndex=$index" ng-mouseleave="vm.menu.mouseoverIndex=-1">
-							<a ui-sref="{{item.getToken()}}" ui-sref-opts="{reload:true}"><span>{{item.getName() | translate}}</span></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-xl-10 col-lg-8 page-body">
-				<header class="row header-page">
-					<div class="col-sm-8">
-						<ul class="breadcrumb">
-							<li ng-repeat="item in vm.breadcrumbs.items">
-								<a ui-sref="{{item.getToken()}}" ui-sref-opts="{reload:true}"><span>{{item.getName() | translate}}</span></a>
-							</li>
-						</ul>
+<nav class="navbar navbar-toggleable-md">
+	<button class="navbar-toggler navbar-toggler-right"
+	        type="button"
+	        data-toggle="collapse"
+	        data-target="#navbar"
+	        aria-controls="navbar"
+	        aria-expanded="false"
+	        aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="#">Premia <span>pracownika</span></a>
+	<div class="collapse navbar-collapse" id="navbar-items">
+		<ul class="navbar-nav navbar-pages mr-auto mt-2 mt-md-0">
+
+			<li class="nav-item"
+			    ng-repeat="item in vm.menu.items"
+			    ui-sref-active="active"
+			    ng-click="vm.menu.activeIndex = $index"
+			    ng-class="vm.getMenuItemClass($index)"
+			    ng-mouseenter="vm.menu.mouseoverIndex=$index"
+			    ng-mouseleave="vm.menu.mouseoverIndex=-1">
+				<a class="nav-link"
+				   ui-sref="{{item.getToken()}}"
+				   ui-sref-opts="{reload:true}">{{item.getName() | translate}}</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav navbar-icons my-2 my-lg-0">
+			<li class="nav-item">
+				<div class="dropdown">
+					<button class="btn btn-transparent"
+					        id="dropdownMore"
+					        data-toggle="dropdown"
+					        aria-haspopup="true"
+					        aria-expanded="false">
+						<i class="fa fa-cog"></i>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMore">
+						<a class="dropdown-item" href="#">
+							{{vm.getLoggedUser()}}
+						</a>
+						<a ng-click="vm.logOut()"
+						   class="dropdown-item"
+						   spinner="{{vm.SpinnerKey.LOGOUT_BUTTON}}"
+						   href="#">
+							Wyloguj
+						</a>
 					</div>
-					<div class="col-sm-4 header-buttons">
-						<ul>
-							<li class="icon dropdown-info user-info">
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown">
-										<i class="fa fa-gear"></i>
-									</a>
-									<ul class="dropdown-menu text-uppercase">
-										<li>
-											<div class="col-sm-12">
-												<h3>{{vm.getLoggedUser()}}</h3>
-											</div>
-										</li>
-										<li ng-click="vm.logOut()">
-											<button spinner="{{vm.SpinnerKey.LOGOUT_BUTTON}}" class="btn">Wyloguj</button>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</header>
-				<div id="view" ui-view></div>
-			</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+<main class="container">
+	<div class="row">
+		<div class="box-white col-12"
+		     id="view"
+		     ui-view>
 		</div>
 	</div>
-</div>
+</main>
+<footer class="footer-container container-fluid">
+	<div class="row">
+		<div class="col-6"></div>
+		<div class="col-6">Bartosz Duda, Sabina Golonka, Marcin Nowak, Oskar Chajdaś</div>
+	</div>
+</footer>
