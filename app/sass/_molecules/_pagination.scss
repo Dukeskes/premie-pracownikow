@@ -31,12 +31,45 @@
 .pagination {
 	display: flex;
 	justify-content: center;
-	margin: .75rem 0;
+	margin: 0rem 0;
 	.page-item {
 		.page-link {
 			font-size: .8em;
 			i {
 				font-size: .7em;
+			}
+		}
+	}
+	> li {
+		border-radius: 0;
+		a {
+			border-radius: 0;
+			border-color: $green;
+			color: $green;
+			&:hover {
+				color: $green-dark;
+				background: $green-light;
+			}
+		}
+		&.active a {
+			border-radius: 0;
+			background: $green-dark;
+			color: $green-lighter;
+			border-color: $green-dark;
+			&:hover {
+				background: $green-dark;
+				color: $green-lighter;
+				border-color: $green-dark;
+			}
+		}
+		&:nth-child(1) {
+			a {
+				border-radius: 0;
+			}
+		}
+		&:nth-last-child(1) {
+			a {
+				border-radius: 0;
 			}
 		}
 	}

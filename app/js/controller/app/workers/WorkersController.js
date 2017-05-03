@@ -1,5 +1,5 @@
-angular.module(APP_ID).controller('workersController', ['tableBuilder', 'userService',
-	function(tableBuilder, userService) {
+angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerService', 'workerDialog',
+	function(tableBuilder, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
@@ -7,20 +7,38 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'userSer
 		var vm = this;
 		vm.SpinnerKey = SpinnerKey;
 
-		vm.table = tableBuilder.createTable(userService.fetchEntries);
+		vm.table = null;
 
+		vm.addWorker = _addWorker;
+		vm.editWorker = _editWorker;
 		vm.toggleOrder = _toggleOrder;
+		vm.loadData = _loadData;
 
 		(function _init() {
+			_loadData();
+		})();
+
+		function _loadData() {
+			vm.table = tableBuilder.createTable(workerService.fetchEntries);
 
 			vm.table.spinnerKey(SpinnerKey.TABLE)
 				.createColumn('id', 'Identyfikator')
-				.createColumn('username', 'Login')
-				.createColumn('password', 'Hasło');
-		})();
+				.createColumn('name', 'Imię')
+				.createColumn('surname', 'Nazwisko')
+				.createColumn('birthDate', 'Data urodzenia')
+				.createColumn('experienceMonths', 'Staż (miesiące)');
+		}
 
 		function _toggleOrder(key) {
 			vm.table.toggleOrder(key)
 				.reload();
+		}
+
+		function _addWorker(_loadData) {
+			workerDialog.show(_loadData);
+		}
+
+		function _editWorker(_loadData, workerId) {
+			workerDialog.show(_loadData, workerId);
 		}
 	}]);

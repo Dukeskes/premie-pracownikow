@@ -33,9 +33,13 @@ angular.module(APP_ID).service('tableBuilder', ['$q', '$location', '$state', '$s
 			return this;
 		};
 
-		this.createColumn = function(id, name) {
-			_columns.push(new Column(id, name));
-			return this;
+		this.createColumn = function(id, name, type) {
+			if(type === undefined) {
+				_columns.push(new Column(id, name));
+				return this;
+			} else {
+				
+			}
 		};
 
 		this.page = function(page) {
