@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-3 column-status">
 			<p class="element-count">
-				<span>23</span> osoby
+				<span>{{ vm.table.entriesCount() }}</span> pracowników
 			</p>
 		</div>
 	</div>
@@ -38,8 +38,11 @@
 		       ng-table="vm.table.toNgTableParams()">
 			<thead>
 				<tr>
-					<th ng-repeat="column in vm.table.getColumns()">
+					<th ng-repeat="column in vm.table.getColumns()"
+					    ng-click="vm.toggleOrder(column.id)">
 						{{column.name}}
+						<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''"
+						   class="fa"></i>
 					</th>
 					<th>Akcje</th>
 				</tr>

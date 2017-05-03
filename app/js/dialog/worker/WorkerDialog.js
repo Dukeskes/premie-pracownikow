@@ -45,11 +45,12 @@ angular.module(APP_ID).service('workerDialog', ['$uibModal', 'alert', 'spinner',
 					}
 
 					function _onSuccess() {
+						console.log(Optional.isDefined(afterSave));
 						if (Optional.isDefined(afterSave)) {
 							afterSave();
 						}
 						_close();
-						alert.success("Pracownik dodany prawidłowo");
+						alert.success("Pomyślnie zaktualizowano tabelę pracowników");
 						spinner.stop(vm.SpinnerKey.SAVE_BUTTON);
 					}
 					

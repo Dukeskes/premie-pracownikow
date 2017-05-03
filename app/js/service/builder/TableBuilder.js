@@ -28,20 +28,17 @@ angular.module(APP_ID).service('tableBuilder', ['$q', '$location', '$state', '$s
 			_config.spinnerKey = key;
 			return this;
 		};
+		this.entriesCount = function () {
+			return _entries.length;
+		};
 		this.entryId = function(id) {
 			_config.entryId = id;
 			return this;
 		};
-
-		this.createColumn = function(id, name, type) {
-			if(type === undefined) {
-				_columns.push(new Column(id, name));
-				return this;
-			} else {
-				
-			}
+		this.createColumn = function(id, name) {
+			_columns.push(new Column(id, name));
+			return this;
 		};
-
 		this.page = function(page) {
 			_params.page = page;
 			return this;

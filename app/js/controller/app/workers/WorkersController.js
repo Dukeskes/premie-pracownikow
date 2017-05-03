@@ -1,14 +1,14 @@
-angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerService', 'workerDialog',
-	function(tableBuilder, workerService, workerDialog) {
+angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', 'workerService', 'workerDialog',
+	function(tableBuilder, spinner, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
 
 		var vm = this;
 		vm.SpinnerKey = SpinnerKey;
+		vm.table = tableBuilder.createTable(workerService.fetchEntries);
 
-		vm.table = null;
-
+		vm.toggleOrder = _toggleOrder;
 		vm.addWorker = _addWorker;
 		vm.editWorker = _editWorker;
 		vm.removeWorker = _removeWorker;
@@ -21,7 +21,6 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerS
 
 		function _loadData() {
 			vm.table = tableBuilder.createTable(workerService.fetchEntries);
-
 			vm.table.spinnerKey(SpinnerKey.TABLE)
 				.createColumn('id', 'Identyfikator')
 				.createColumn('name', 'Imię')
@@ -31,11 +30,10 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerS
 		}
 
 		function _toggleOrder(key) {
-			vm.table.toggleOrder(key)
-				.reload();
+			vm.table.toggleOrder(key);
 		}
 
-		function _addWorker(_loadData) {
+		function _addWorker() {
 			workerDialog.show(_loadData);
 		}
 
@@ -44,8 +42,10 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'workerS
 		}
 
 		function _removeWorker(workerId) {
+			spinner.start(SpinnerKey.TABLE);
 			workerService.delete(workerId).then(function(){
 				_loadData();
+				spinner.stop(SpinnerKey.TABLE);
 			});
 		}
 	}]);

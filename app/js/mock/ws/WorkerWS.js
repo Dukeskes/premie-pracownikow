@@ -10,7 +10,7 @@ angular.module(APP_ID).run(['$httpBackend', function($httpBackend) {
 		var json = JSON.parse(data);
 		Database.workers.push(
 			new Worker(
-				Database.workers.length+1,
+				Database.workers[Database.workers.length-1].id+1,
 				json.name,
 				json.surname,
 				json.birthDate,
