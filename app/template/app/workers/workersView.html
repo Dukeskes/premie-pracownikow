@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-3 column-status">
 			<p class="element-count">
-				<span>23</span> osoby
+				<span>{{ vm.table.entriesCount() }}</span> pracowników
 			</p>
 		</div>
 	</div>
@@ -25,22 +25,24 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link">
+			<a class="nav-link" ng-click="vm.addWorker()">
 				<i class="fa fa-plus"></i>
 				Dodaj pracownika
 			</a>
 		</li>
 	</ul>
 </nav>
-<article class="col-sm-12 table-horizontal">
+<article class="col-sm-12 table-horizontal" spinner="{{vm.SpinnerKey.TABLE}}">
 	<div class="row">
 		<table class="table"
-		       ng-table="vm.table.toNgTableParams()"
-		       spinner="{{vm.SpinnerKey.TABLE}}">
+		       ng-table="vm.table.toNgTableParams()">
 			<thead>
 				<tr>
-					<th ng-repeat="column in vm.table.getColumns()">
+					<th ng-repeat="column in vm.table.getColumns()"
+					    ng-click="vm.toggleOrder(column.id)">
 						{{column.name}}
+						<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''"
+						   class="fa"></i>
 					</th>
 					<th>Akcje</th>
 				</tr>
@@ -56,8 +58,13 @@
 						<span class="dot">
 							<div class="btn-holder">
 								<div class="btn-group">
-									<a class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-									<a class="btn btn-primary"><i class="fa fa-times"></i></a>
+									<a class="btn btn-primary"
+									   ng-click="vm.editWorker(vm.loadData, entry.id)">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a class="btn btn-primary" ng-click="vm.removeWorker(entry.id)">
+										<i class="fa fa-trash-o"></i>
+									</a>
 								</div>
 							</div>
 						</span>

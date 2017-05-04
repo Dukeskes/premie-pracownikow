@@ -9,7 +9,7 @@
 	"STATE.DASHBOARD": "Pulpit",
 	"STATE.DIALOG": "Dialogi",
 	"STATE.SPINNER": "Kręcioły",
-	"STATE.TABLE": "Tabela",
+	"STATE.WORKERS": "Lista pracowników",
 	"STATE.ERROR": "Błąd",
 
 	"APP.TITLE": "Template",
@@ -35,5 +35,9 @@
     "ROTATE_DEVICE.TITLE": "Obróć urządzenie",
     "ROTATE_DEVICE.RESOLUTION": "minimalna obsługiwana rozdzielczość - 1024x768",
     "UNSUPPORTED_DEVICE.TITLE": "Twoja rozdzielczość jest nieobsługiwana",
-    "UNSUPPORTED_DEVICE.RESOLUTION": "minimalna obsługiwana rozdzielczość - 1024x768"
+    "UNSUPPORTED_DEVICE.RESOLUTION": "minimalna obsługiwana rozdzielczość - 1024x768",
+
+	"WORKER_DIALOG.SAVED_CORRECTLY": "Dane zostały poprawnie zapisane",
+	"WORKER_DIALOG.DUPLICATE_WORKER": "Pracownik już istnieje!",
+	"WORKER_DIALOG.SAVING_ERROR": "Błąd przy zapiswaniu"
 }

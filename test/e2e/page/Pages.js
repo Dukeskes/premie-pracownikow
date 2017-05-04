@@ -4,7 +4,8 @@ var Pages = {};
 	[
 		'Login',
 		'Registration',
-		'Dashboard'
+		'Dashboard',
+		'Worksers'
 	].forEach(function(pageName) {
 		var pageFilePath = './' + pageName + 'Page.js';
 		Pages[pageName] = _objectProvider(require(pageFilePath));

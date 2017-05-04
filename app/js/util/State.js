@@ -7,7 +7,7 @@ State.Token.APP = 'app';
 State.Token.DASHBOARD = State.Token.APP + '.dashboard';
 State.Token.DIALOG = State.Token.APP + '.dialog';
 State.Token.SPINNER = State.Token.APP + '.spinner';
-State.Token.TABLE = State.Token.APP + '.table';
+State.Token.WORKERS = State.Token.APP + '.workers';
 State.Token.ERROR = State.Token.APP + '.error';
 
 State.Item = function(abstract, token, name, url, controller, controllerAs, template) {
@@ -59,7 +59,7 @@ State.Item = function(abstract, token, name, url, controller, controllerAs, temp
 		_createItem(_parent, 'STATE.DASHBOARD', State.Token.DASHBOARD),
 		_createItem(_parent, 'STATE.DIALOG', State.Token.DIALOG),
 		_createItem(_parent, 'STATE.SPINNER', State.Token.SPINNER),
-		_createItem(_parent, 'STATE.TABLE', State.Token.TABLE, null, ['count', 'page', 'filters', 'orders']),
+		_createItem(_parent, 'STATE.WORKERS', State.Token.WORKERS, null, ['count', 'page', 'filters', 'orders']),
 		_createErrorItem('STATE.ERROR', State.Token.ERROR)
 	].forEach(function(item) {
 			_tokenItemMap[item.getToken()] = item;

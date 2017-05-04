@@ -179,7 +179,6 @@
 @import "_organisms/header-content";
 @import "_organisms/section-chart";
 @import "_organisms/section-horizontal-details";
-@import "_organisms/modal-company-add";
 
 // ----------------------------------------------------------------------
 // concept - to remove dev tests
@@ -191,6 +190,7 @@
 // ----------------------------------------------------------------------
 @import "_template/login";
 @import "_template/dashboard";
+@import "_template/modal";
 
 
 body {

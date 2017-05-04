@@ -1,7 +1,8 @@
 <?php
 // Routes
 
-$app -> get( '/worker/' , \WorkerController :: class . ':list' );
+$app -> get( '/worker/entries' , \WorkerController :: class . ':getList' );
+$app -> post( '/worker/entries' , \WorkerController :: class . ':add' );
 
 $app->get('/[{name}]', function ($request, $response, $args) {
     // Sample log message

@@ -15,7 +15,7 @@ var replace = require('gulp-html-replace');
 var rimraf = require('gulp-rimraf');
 var filenames = require('gulp-filenames');
 var change = require('gulp-change');
-var karma = require('karma');
+//var karma = require('karma');
 var protractor = require('gulp-angular-protractor');
 
 var LIB_PATHS = {
@@ -74,13 +74,13 @@ var DEV_PATHS = {
 		'app/bower_components/angular-mocks/angular-mocks.js'
 	]
 };
-var TEST_PATHS = {
-	UNIT_CONFIG: 'test/unit.conf.js',
-	E2E_CONFIG: 'test/e2e.conf.js',
-	E2E_STORY: [
-		'test/e2e/story/**/*.js'
-	]
-};
+// var TEST_PATHS = {
+// 	UNIT_CONFIG: 'test/unit.conf.js',
+// 	E2E_CONFIG: 'test/e2e.conf.js',
+// 	E2E_STORY: [
+// 		'test/e2e/story/**/*.js'
+// 	]
+// };
 
 var APP_BASE = {
 	DIR: 'app/',
@@ -316,55 +316,55 @@ gulp.task('dist:connect', function() {
 		middleware: WS_PROXY.MIDDLEWARE
 	});
 });
-
-gulp.task('test:unit', function(done) {
-	new karma.Server({
-		configFile: path.resolve(TEST_PATHS.UNIT_CONFIG),
-		singleRun: true,
-		autoWatch: false
-	}, done).start();
-});
-gulp.task('test:e2e:stories', function(done) {
-	connect.server({
-		root: APP_BASE.DIR,
-		port: 8888
-	});
-
-	gulp.src(TEST_PATHS.E2E_STORY)
-		.pipe(protractor({
-			configFile: TEST_PATHS.E2E_CONFIG,
-			autoStartStopServer: true,
-			debug: false
-		}))
-		.on('error', function(e) {
-			console.log(e);
-			connect.serverClose();
-		})
-		.on('end', function() {
-			connect.serverClose();
-			done();
-		});
-});
-gulp.task('test:e2e:dev', ['dev:compile'], function(done) {
-	sequence(
-		'disable-animations',
-		'test:e2e:stories',
-		done
-	)
-});
-gulp.task('test:e2e', ['prod:compile'], function(done) {
-	sequence(
-		'disable-animations',
-		'test:e2e:stories',
-		done
-	)
-});
-gulp.task('test', function() {
-	sequence(
-		'test:unit',
-		'test:e2e:dev'
-	);
-});
+//
+// gulp.task('test:unit', function(done) {
+// 	new karma.Server({
+// 		configFile: path.resolve(TEST_PATHS.UNIT_CONFIG),
+// 		singleRun: true,
+// 		autoWatch: false
+// 	}, done).start();
+// });
+// gulp.task('test:e2e:stories', function(done) {
+// 	connect.server({
+// 		root: APP_BASE.DIR,
+// 		port: 8888
+// 	});
+//
+// 	gulp.src(TEST_PATHS.E2E_STORY)
+// 		.pipe(protractor({
+// 			configFile: TEST_PATHS.E2E_CONFIG,
+// 			autoStartStopServer: true,
+// 			debug: false
+// 		}))
+// 		.on('error', function(e) {
+// 			console.log(e);
+// 			connect.serverClose();
+// 		})
+// 		.on('end', function() {
+// 			connect.serverClose();
+// 			done();
+// 		});
+// });
+// gulp.task('test:e2e:dev', ['dev:compile'], function(done) {
+// 	sequence(
+// 		'disable-animations',
+// 		'test:e2e:stories',
+// 		done
+// 	)
+// });
+// gulp.task('test:e2e', ['prod:compile'], function(done) {
+// 	sequence(
+// 		'disable-animations',
+// 		'test:e2e:stories',
+// 		done
+// 	)
+// });
+// gulp.task('test', function() {
+// 	sequence(
+// 		'test:unit',
+// 		'test:e2e:dev'
+// 	);
+// });
 
 gulp.task('dev:compile', ['lint', 'sass', 'dev:replace']);
 gulp.task('dev:watch', function() {
@@ -373,9 +373,9 @@ gulp.task('dev:watch', function() {
 	gulp.watch([APP_PATHS.INDEX].concat(APP_PATHS.TEMPLATE), ['html']);
 	gulp.watch(DEV_PATHS.MOCK_JS, ['lint:mock']);
 
-	new karma.Server({
-		configFile: path.resolve(TEST_PATHS.UNIT_CONFIG)
-	}).start();
+	//new karma.Server({
+		//configFile: path.resolve(TEST_PATHS.UNIT_CONFIG)
+	//}).start();
 });
 gulp.task('dev', function() {
 	sequence(
@@ -400,13 +400,13 @@ gulp.task('prod', function() {
 });
 
 gulp.task('dist:compile', ['lint:app', 'sass']);
-gulp.task('dist:test', function(done) {
-	sequence(
-		'dev:compile',
-		'test',
-		done
-	);
-});
+// gulp.task('dist:test', function(done) {
+// 	sequence(
+// 		'dev:compile',
+// 		'test',
+// 		done
+// 	);
+// });
 gulp.task('dist:install', function(done) {
 	sequence(
 		'dist:compile',
@@ -422,7 +422,7 @@ gulp.task('dist', function() {
 		);
 	} else {
 		sequence(
-			'dist:test',
+			//'dist:test',
 			'dist:install',
 			'dist:connect'
 		);

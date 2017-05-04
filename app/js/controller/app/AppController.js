@@ -14,7 +14,7 @@ angular.module(APP_ID).controller('appController', ['$state', 'spinner', 'breadc
 			State.getItem(State.Token.DASHBOARD),
 			State.getItem(State.Token.DIALOG),
 			State.getItem(State.Token.SPINNER),
-			State.getItem(State.Token.TABLE)
+			State.getItem(State.Token.WORKERS)
 		]
 	};
 
