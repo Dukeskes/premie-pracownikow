@@ -37,16 +37,16 @@ class WorkerController {
 
         $worker -> imie = $request -> getParsedBody()[ 'imie' ]; 
         $worker -> nazwisko = $request -> getParsedBody()[ 'nazwisko' ];
-        $worker -> dataUrodzenia = $request -> getParsedBody()[ 'dataUrodzenia' ]; 
-        $worker -> przepracowaneGodziny = $request -> getParsedBody()[ 'przepracowaneGodziny' ]; 
-        $worker -> doswiadczenie = $request -> getParsedBody()[ 'doswiadczenie' ]; 
-        $worker -> ocenaPracownikow = $request -> getParsedBody()[ 'ocenaPracownikow' ]; 
-        $worker -> ocenaPM = $request -> getParsedBody()[ 'ocenaPM' ]; 
-        $worker -> wskaznikPremii = $request -> getParsedBody()[ 'wskaznikPremii' ]; 
-        $worker -> urlopy = $request -> getParsedBody()[ 'urlopy' ]; 
-        $worker -> chorobowe = $request -> getParsedBody()[ 'chorobowe' ]; 
-        $worker -> terminowosc = $request -> getParsedBody()[ 'terminowosc' ]; 
-        $worker -> efektywnosc = $request -> getParsedBody()[ 'efektywnosc' ];
+        $worker -> dataUrodzenia = $request -> getParsedBody()[ 'dataUrodzenia' ] ? $request -> getParsedBody()[ 'dataUrodzenia' ] : '2017-05-04 16:54:49' ; 
+        $worker -> przepracowaneGodziny = $request -> getParsedBody()[ 'przepracowaneGodziny' ] ? $request -> getParsedBody()[ 'przepracowaneGodziny' ] : 50 ; 
+        $worker -> doswiadczenie = $request -> getParsedBody()[ 'doswiadczenie' ] ? $request -> getParsedBody()[ 'doswiadczenie' ] : 50 ; 
+        $worker -> ocenaPracownikow = $request -> getParsedBody()[ 'ocenaPracownikow' ] ? $request -> getParsedBody()[ 'ocenaPracownikow' ] : 50 ; 
+        $worker -> ocenaPM = $request -> getParsedBody()[ 'ocenaPM' ] ? $request -> getParsedBody()[ 'ocenaPM' ] : 50 ; 
+        $worker -> wskaznikPremii = $request -> getParsedBody()[ 'wskaznikPremii' ] ? $request -> getParsedBody()[ 'wskaznikPremii' ] : 50 ; 
+        $worker -> urlopy = $request -> getParsedBody()[ 'urlopy' ] ? $request -> getParsedBody()[ 'urlopy' ] : 50 ; 
+        $worker -> chorobowe = $request -> getParsedBody()[ 'chorobowe' ] ? $request -> getParsedBody()[ 'chorobowe' ] : 50 ; 
+        $worker -> terminowosc = $request -> getParsedBody()[ 'terminowosc' ] ? $request -> getParsedBody()[ 'terminowosc' ] : 50 ; 
+        $worker -> efektywnosc = $request -> getParsedBody()[ 'efektywnosc' ] ? $request -> getParsedBody()[ 'efektywnosc' ] : 50 ;
 
         $worker -> save();
 
