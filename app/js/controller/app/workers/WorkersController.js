@@ -1,5 +1,5 @@
 angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', 'workerService', 'workerDialog',
-	function(tableBuilder, spinner, workerService, workerDialog) {
+	function (tableBuilder, spinner, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
@@ -43,9 +43,10 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 
 		function _removeWorker(workerId) {
 			spinner.start(SpinnerKey.TABLE);
-			workerService.delete(workerId).then(function(){
+			workerService.delete(workerId).then(function () {
 				_loadData();
 				spinner.stop(SpinnerKey.TABLE);
 			});
 		}
-	}]);
+	}
+]);
