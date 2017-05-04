@@ -103,7 +103,7 @@ var DIST_BASE = {
 
 var WS_PROXY = {
     MAPPING: '/ws',
-    TARGET: 'http://localhost',
+    TARGET: 'http://localhost/premie-pracownikow/',
     PATH: '/',
     REVERSE_COOKIE_PATH: '/',
     MIDDLEWARE: function(connect, opt) {
