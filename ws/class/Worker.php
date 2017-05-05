@@ -16,6 +16,7 @@ class Worker extends \Illuminate\Database\Eloquent\Model {
         return array(
             'list' => $table -> get()
         );
+        
     }    
 
 }
