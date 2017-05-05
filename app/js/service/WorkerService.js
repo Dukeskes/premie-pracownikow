@@ -12,7 +12,7 @@ angular.module(APP_ID).service('workerService', ['http', function(http) {
     };
 
     this.fetchEntries = function(params) {
-        return http.post('ws/worker/entries', params);
+        return http.get('ws/worker/entries', params);
     };
 
     this.delete = function(workerId) {
