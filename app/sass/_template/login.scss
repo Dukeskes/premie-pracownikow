@@ -5,3 +5,43 @@
 // Date: 18.08.2016
 // Dependencies:
 // ------------------------------------------------------------
+#app {
+	min-height: 100vh;
+}
+.content-login {
+	width: 30rem;
+	height: 30rem;
+	background: $white;
+	position: absolute;
+	left: 50%;
+	top: 50vh;
+	margin-left: -15rem;
+	margin-top: -15rem;
+	header {
+		padding: 2em;
+		background: $green-dark;
+		h3 {
+			color: $green-lighter;
+		}
+		p {
+			color: #F6FFE0;
+			margin-bottom: 0;
+			font-weight: 300;
+		}
+	}
+	article {
+		padding: 3em;
+
+		.btn {
+			cursor: pointer;
+			&:hover {
+				background: $green-dark;
+				border-color: $green-dark;
+				color: $white;
+			}
+			&:disabled {
+				cursor: $cursor-disabled;
+			}
+		}
+	}
+}

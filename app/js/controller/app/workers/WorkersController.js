@@ -30,7 +30,8 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 		}
 
 		function _toggleOrder(key) {
-			vm.table.toggleOrder(key);
+			vm.table.toggleOrder(key)
+				.reload();
 		}
 
 		function _addWorker() {

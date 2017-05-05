@@ -1,24 +1,21 @@
 <section class="content-login animated flipInY">
-	<header>
-		<h3>{{'LOGIN.TITLE' | translate}}</h3>
+	<header class="form-elements">
+		<h3>Logowanie</h3>
+		<p>Zaloguj się aby przejść do dalszej częsci aplikacji</p>
 	</header>
 	<article>
 		<form name="form">
-			<div class="form-group">
+			<div class="form-group form-group-vertical">
 				<label for="emailInput">{{'LOGIN.USERNAME' | translate}}</label>
-				<input id="emailInput" ng-model="vm.credentials.login" class="form-control btn btn-default" autocomplete="off" required />
+				<input id="emailInput" ng-model="vm.credentials.login" class="form-control" autocomplete="off" required />
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-vertical">
 				<label for="passwordInput">{{'LOGIN.PASSWORD' | translate}}</label>
-				<input id="passwordInput" type="password" ng-model="vm.credentials.password" class="form-control btn btn-default" required />
-			</div>
-			<div class="checkbox">
-				<input id="rememberPasswordInput" type="checkbox">
-				<label for="rememberPasswordInput">{{'LOGIN.REMEMBER_PASSWORD' | translate}}</label>
+				<input id="passwordInput" type="password" ng-model="vm.credentials.password" class="form-control" required />
 			</div>
 			<button ng-disabled="form.$invalid" spinner type="submit" ng-click="vm.logIn()" class="btn btn-primary">{{'LOGIN.APPLY' | translate}}</button>
+			<a ui-sref="registration" class="btn btn-secondary">{{'LOGIN.REGISTRATION' | translate}}</a>
 		</form>
 		<div ng-show="vm.hasError()" class="error-msg">{{vm.errorToken | translate}}</div>
-		<a class="text-center" ui-sref="registration">{{'LOGIN.REGISTRATION' | translate}}</a>
 	</article>
 </section>

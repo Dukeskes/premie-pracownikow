@@ -1,4 +1,5 @@
 var Role = {
 	ADMIN: 'ADMIN',
+	USER: 'USER',
 	ANONYMOUS: 'ANONYMOUS'
 };
