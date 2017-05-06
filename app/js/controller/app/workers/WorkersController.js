@@ -1,5 +1,5 @@
-angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', 'workerService', 'workerDialog',
-	function (tableBuilder, spinner, workerService, workerDialog) {
+angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', '$state', '$window', 'workerService', 'workerDialog',
+	function (tableBuilder, spinner, $state, $window, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
@@ -14,6 +14,8 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 		vm.removeWorker = _removeWorker;
 		vm.toggleOrder = _toggleOrder;
 		vm.loadData = _loadData;
+		vm.showQuestionnaire = _showQuestionnaire;
+		vm.showWorker = _showWorker;
 
 		(function _init() {
 			_loadData();
@@ -47,6 +49,24 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 			workerService.delete(workerId).then(function () {
 				_loadData();
 				spinner.stop(SpinnerKey.TABLE);
+			});
+		}
+		
+		function _showQuestionnaire(workerId) {
+			workerService.getWorkerToken(workerId).then(function(data) {
+				var _url = $state.href(State.Token.QUESTIONNAIRE, {
+						token: data
+				});
+				$window.open(_url, '_blank');
+			});
+		}
+
+		function _showWorker(workerId) {
+			workerService.getWorkerToken(workerId).then(function(data) {
+				var _url = $state.href(State.Token.WORKER, {
+					token: data
+				});
+				$window.open(_url, '_self');
 			});
 		}
 	}

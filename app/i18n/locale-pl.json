@@ -3,6 +3,10 @@
 	"ERROR.WRONG_CREDENTIALS": "Błędne dane",
 	"ERROR.USERNAME_ALREADY_EXISTS": "Użytkownik już istnieje",
 
+	"SUCCESS.DELETE": "Usunięte wpis",
+	"SUCCESS.SAVE": "Zapisano z powodzeniem",
+	"SUCCESS.GET": "",
+
 	"STATE.LOGIN": "Logowanie",
 	"STATE.REGISTRATION": "Rejestracja",
 	"STATE.APP": "App",

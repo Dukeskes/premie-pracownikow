@@ -2,11 +2,12 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
 	var _STATE_ROLES_MAP = {};
 	_STATE_ROLES_MAP[State.Token.LOGIN] = [Role.ANONYMOUS];
 	_STATE_ROLES_MAP[State.Token.REGISTRATION] = [Role.ANONYMOUS];
-	_STATE_ROLES_MAP[State.Token.APP] = [Role.ADMIN];
-	_STATE_ROLES_MAP[State.Token.DASHBOARD] = [Role.ADMIN];
+	_STATE_ROLES_MAP[State.Token.APP] = [Role.ADMIN, Role.USER, Role.PM];
+	_STATE_ROLES_MAP[State.Token.DASHBOARD] = [Role.ADMIN, Role.USER, Role.PM];
 	_STATE_ROLES_MAP[State.Token.DIALOG] = [Role.ADMIN];
 	_STATE_ROLES_MAP[State.Token.SPINNER] = [Role.ADMIN];
-	_STATE_ROLES_MAP[State.Token.WORKERS] = [Role.ADMIN, Role.USER];
+	_STATE_ROLES_MAP[State.Token.WORKERS] = [Role.ADMIN, Role.USER, Role.PM];
+	_STATE_ROLES_MAP[State.Token.QUESTIONNAIRE] = [Role.ADMIN, Role.USER, Role.PM];
 	_STATE_ROLES_MAP[State.Token.ERROR] = [Role.ADMIN];
 
 	this.logIn = function(credentials) {
@@ -15,6 +16,7 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
 				var userPrincipal = response.data;
 
 				$http.defaults.headers.common[CookieToken.AUTH] = userPrincipal.token;
+				$cookies.put(CookieToken.ID,   userPrincipal.id);
 				$cookies.put(CookieToken.AUTH, userPrincipal.token);
 				$cookies.put(CookieToken.ROLE, userPrincipal.role);
 				$cookies.put(CookieToken.USER, userPrincipal.name);
@@ -26,6 +28,7 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
 	this.logOut = function() {
 		return http.post('ws/auth/logOut', {})
 			.resolve(function(response) {
+				$cookies.remove(CookieToken.ID);
 				$cookies.remove(CookieToken.AUTH);
 				$cookies.remove(CookieToken.ROLE);
 				$cookies.remove(CookieToken.USER);
@@ -42,6 +45,9 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
 	};
 	this.getUserName = function() {
 		return $cookies.get(CookieToken.USER);
+	};
+	this.getUserID = function() {
+		return $cookies.get(CookieToken.ID);
 	};
 
 	this.isAuthenticated = function() {

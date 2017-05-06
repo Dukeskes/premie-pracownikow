@@ -5,7 +5,7 @@ angular.module(APP_ID).run(['$httpBackend', function($httpBackend) {
 			var user = Database.users[i];
 			if(user.username == json.login && user.password == json.password) {
 				var authToken = user.username + '_token';
-				return [ResponseCode.OK, new UserPrincipal(user.id, Role.ADMIN, authToken, user.username)];
+				return [ResponseCode.OK, new UserPrincipal(user.id, user.role, authToken, user.username)];
 			}
 		}
 

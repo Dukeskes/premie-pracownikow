@@ -17,6 +17,30 @@
 			font-weight: 300;
 		}
 	}
+	> header {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		background: $brand-primary;
+		&.avatar {
+			padding: 2em 0;
+			text-align: center;
+			i {
+				font-size: 3em;
+			}
+		}
+		p {
+			margin-bottom: 0;
+			color: $green-lighter
+		}
+		h3 {
+			color: $green-lighter
+		}
+		i {
+			color: $green-lighter
+		}
+	}
 	> article {
 		border-bottom: .1em solid $blue-lightest;
 		padding-top: 1em;
