@@ -57,3 +57,14 @@ Database.reviews = [];
 		}
 	}
 })();
+
+Database.stats = {
+	workersCount: RandomData.int(1000, 5000),
+	reviewsCount: RandomData.int(10000, 50000),
+	avgRateWorkers: RandomData.int(50, 100),
+	avgRatePm: RandomData.int(50, 100),
+	mostPopularName: RandomData.firstName(),
+	biggestBonus: RandomData.int(20, 35),
+	increaseEfficiency: RandomData.int(17, 40),
+	increasePunctuality: RandomData.int(17, 40)
+};

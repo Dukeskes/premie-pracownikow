@@ -60,5 +60,107 @@
 				<p class="gray">Cały system w liczbach</p>
 			</header>
 		</section>
+		<section class="row form-elements">
+			<article class="col-12 px-4">
+				<div class="row">
+					<div class="col-6 form-group form-group-vertical">
+						<label>Ilość pracowników</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.workersCount"
+						       disabled="">
+					</div>
+					<div class="col-6 form-group form-group-vertical">
+						<label>Ilość Ocen</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.reviewsCount"
+						       disabled="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 form-group form-group-vertical">
+						<label>Średnia ocena pracowników</label>
+						<div class="rate-buttons">
+							<label class="button-star">
+								<i class="fa fa-star rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRateWorkers < 25, 'fa-star': vm.stats.avgRateWorkers >= 25}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRateWorkers < 50, 'fa-star': vm.stats.avgRateWorkers >= 50}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRateWorkers < 75, 'fa-star': vm.stats.avgRateWorkers >= 75}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class=" button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRateWorkers < 100, 'fa-star': vm.stats.avgRateWorkers >= 100}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+						</div>
+					</div>
+					<div class="col-6 form-group form-group-vertical">
+						<label>Średnia ocena menagerów</label>
+						<div class="rate-buttons">
+							<label class="button-star">
+								<i class="fa fa-star rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRatePm < 25, 'fa-star': vm.stats.avgRatePm >= 25}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRatePm < 50, 'fa-star': vm.stats.avgRatePm >= 50}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class="button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRatePm < 75, 'fa-star': vm.stats.avgRatePm >= 75}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+							<label class=" button-star">
+								<i ng-class="{'fa-star-o': vm.stats.avgRatePm < 100, 'fa-star': vm.stats.avgRatePm >= 100}"
+								   class="fa rate-star-indicator"></i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 form-group form-group-vertical">
+						<label>Najpopularniejsze imię</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.mostPopularName"
+						       disabled="">
+					</div>
+					<div class="col-6 form-group form-group-vertical">
+						<label>Największy bonus (%)</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.biggestBonus"
+						       disabled="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 form-group form-group-vertical">
+						<label>Wzrost terminowości</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.increasePunctuality"
+						       disabled="">
+					</div>
+					<div class="col-6 form-group form-group-vertical">
+						<label>Wzrost wydajności</label>
+						<input class="form-control disabled"
+						       type="text"
+						       ng-model="vm.stats.increasePunctuality"
+						       disabled="">
+					</div>
+				</div>
+			</article>
+		</section>
 	</div>
 </div>
