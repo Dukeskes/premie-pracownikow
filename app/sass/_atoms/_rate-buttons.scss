@@ -2,36 +2,41 @@
 	margin-top: $spacer/2;
 	margin-bottom: $spacer/2;
 	.button-star {
+		font-size: 2em;
 		padding-left: .5em;
-		margin: 0;
-		cursor: pointer;
-		.custom-control-input {
-			~ .rate-star-indicator {
-				font-size: 2em;
-				background: transparent;
-				border: 0;
-				&.fa.fa-star {
-					color: $green;
-				}
-				&.fa.fa-star-o {
-					color: $gray;
-					&:hover {
+		i.fa.fa-star {
+			color: $green;
+		}
+		&.custom-radio {
+			margin: 0;
+			cursor: pointer;
+			.custom-control-input {
+				~ .rate-star-indicator {
+					background: transparent;
+					border: 0;
+					&.fa.fa-star {
 						color: $green;
+					}
+					&.fa.fa-star-o {
+						color: $gray;
+						&:hover {
+							color: $green;
+						}
 					}
 				}
 			}
-		}
-		&:hover {
-			.rate-star-indicator {
-				&.fa {
-					color: $green;
+			&:hover {
+				.rate-star-indicator {
+					&.fa {
+						color: $green;
+					}
 				}
-			}
-			~ .button-star {
-				.custom-control-input {
-					~ .rate-star-indicator {
-						&.fa {
-							color: $gray;
+				~ .custom-radiu.button-star {
+					.custom-control-input {
+						~ .rate-star-indicator {
+							&.fa {
+								color: $gray;
+							}
 						}
 					}
 				}

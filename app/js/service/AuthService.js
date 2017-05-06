@@ -8,6 +8,7 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
 	_STATE_ROLES_MAP[State.Token.SPINNER] = [Role.ADMIN];
 	_STATE_ROLES_MAP[State.Token.WORKERS] = [Role.ADMIN, Role.USER, Role.PM];
 	_STATE_ROLES_MAP[State.Token.QUESTIONNAIRE] = [Role.ADMIN, Role.USER, Role.PM];
+	_STATE_ROLES_MAP[State.Token.WORKER] = [Role.ADMIN];
 	_STATE_ROLES_MAP[State.Token.ERROR] = [Role.ADMIN];
 
 	this.logIn = function(credentials) {

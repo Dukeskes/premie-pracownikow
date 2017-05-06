@@ -3,171 +3,148 @@
 		<i class="fa fa-user"></i>
 	</header>
 	<header class="col-6 no-pl">
-		<h3>{{ vm.review.worker.name }} {{ vm.review.worker.surname }}</h3>
-		<p class="gray">Oceń jakim pracownikiem według Ciebie jest</p>
+		<h3>{{ vm.worker.name }} {{ vm.worker.surname }} <sup>({{ vm.worker.role }})</sup></h3>
+		<p class="gray">Sugerowana premia: {{ vm.worker.bonusRate }}%</p>
 	</header>
 	<header class="col-4 text-right">
-		<p>ID: {{ vm.review.worker.token }}</p>
-		<p>Data: {{ vm.review.date }}</p>
-		<p>Staż: {{ vm.review.worker.experienceMonths }} (miesięce)</p>
+		<p>ID: {{ vm.worker.token }}</p>
 	</header>
 	<article class="col-8 offset-2 no-border no-pl">
 		<div class="row">
-			<div class="col-12 form-group form-group-vertical">
+			<div class="col-6 form-group form-group-vertical">
 				<label>Efektywność</label>
 				<div class="rate-buttons">
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="0"
-						       ng-model="vm.review.efficiency">
+					<label class="button-star">
 						<i class="fa fa-star rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="25"
-						       ng-model="vm.review.efficiency">
-						<i ng-class="{'fa-star-o': vm.review.efficiency < 25, 'fa-star': vm.review.efficiency >= 25}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.efficiency < 25, 'fa-star': vm.worker.efficiency >= 25}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="50"
-						       ng-model="vm.review.efficiency">
-						<i ng-class="{'fa-star-o': vm.review.efficiency < 50, 'fa-star': vm.review.efficiency >= 50}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.efficiency < 50, 'fa-star': vm.worker.efficiency >= 50}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="75"
-						       ng-model="vm.review.efficiency">
-						<i ng-class="{'fa-star-o': vm.review.efficiency < 75, 'fa-star': vm.review.efficiency >= 75}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.efficiency < 75, 'fa-star': vm.worker.efficiency >= 75}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="100"
-						       ng-model="vm.review.efficiency">
-						<i ng-class="{'fa-star-o': vm.review.efficiency < 100, 'fa-star': vm.review.efficiency >= 100}"
+					<label class=" button-star">
+						<i ng-class="{'fa-star-o': vm.worker.efficiency < 100, 'fa-star': vm.worker.efficiency >= 100}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-12 form-group form-group-vertical">
+			<div class="col-6 form-group form-group-vertical">
 				<label>Terminowość</label>
 				<div class="rate-buttons">
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="0"
-						       ng-model="vm.review.punctuality">
+					<label class="button-star">
 						<i class="fa fa-star rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="25"
-						       ng-model="vm.review.punctuality">
-						<i ng-class="{'fa-star-o': vm.review.punctuality < 25, 'fa-star': vm.review.punctuality >= 25}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.punctuality < 25, 'fa-star': vm.worker.punctuality >= 25}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="50"
-						       ng-model="vm.review.punctuality">
-						<i ng-class="{'fa-star-o': vm.review.punctuality < 50, 'fa-star': vm.review.punctuality >= 50}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.punctuality < 50, 'fa-star': vm.worker.punctuality >= 50}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="75"
-						       ng-model="vm.review.punctuality">
-						<i ng-class="{'fa-star-o': vm.review.punctuality < 75, 'fa-star': vm.review.punctuality >= 75}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.punctuality < 75, 'fa-star': vm.worker.punctuality >= 75}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="100"
-						       ng-model="vm.review.punctuality">
-						<i ng-class="{'fa-star-o': vm.review.punctuality < 100, 'fa-star': vm.review.punctuality >= 100}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.punctuality < 100, 'fa-star': vm.worker.punctuality >= 100}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 form-group form-group-vertical">
-				<label>Twoja ogólna ocena</label>
+			<div class="col-6 form-group form-group-vertical">
+				<label>Ogólna ocena pracowników</label>
 				<div class="rate-buttons">
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="0"
-						       ng-model="vm.review.userRate">
+					<label class="button-star">
 						<i class="fa fa-star rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="25"
-						       ng-model="vm.review.userRate">
-						<i ng-class="{'fa-star-o': vm.review.userRate < 25, 'fa-star': vm.review.userRate >= 25}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.workersRate < 25, 'fa-star': vm.worker.workersRate >= 25}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="50"
-						       ng-model="vm.review.userRate">
-						<i ng-class="{'fa-star-o': vm.review.userRate < 50, 'fa-star': vm.review.userRate >= 50}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.workersRate < 50, 'fa-star': vm.worker.workersRate >= 50}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="75"
-						       ng-model="vm.review.userRate">
-						<i ng-class="{'fa-star-o': vm.review.userRate < 75, 'fa-star': vm.review.userRate >= 75}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.workersRate < 75, 'fa-star': vm.worker.workersRate >= 75}"
 						   class="fa rate-star-indicator"></i>
 					</label>
-					<label class="custom-control custom-radio button-star">
-						<input name="efficiency"
-						       type="radio"
-						       class="custom-control-input"
-						       ng-value="100"
-						       ng-model="vm.review.userRate">
-						<i ng-class="{'fa-star-o': vm.review.userRate < 100, 'fa-star': vm.review.userRate >= 100}"
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.workersRate < 100, 'fa-star': vm.worker.workersRate >= 100}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 				</div>
+			</div>
+			<div class="col-6 form-group form-group-vertical">
+				<label>Ogólna ocena menadżerów</label>
+				<div class="rate-buttons">
+					<label class="button-star">
+						<i class="fa fa-star rate-star-indicator"></i>
+					</label>
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.pmRate < 25, 'fa-star': vm.worker.pmRate >= 25}"
+						   class="fa rate-star-indicator"></i>
+					</label>
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.pmRate < 50, 'fa-star': vm.worker.pmRate >= 50}"
+						   class="fa rate-star-indicator"></i>
+					</label>
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.pmRate < 75, 'fa-star': vm.worker.pmRate >= 75}"
+						   class="fa rate-star-indicator"></i>
+					</label>
+					<label class="button-star">
+						<i ng-class="{'fa-star-o': vm.worker.pmRate < 100, 'fa-star': vm.worker.pmRate >= 100}"
+						   class="fa rate-star-indicator"></i>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 form-group form-group-vertical">
+				<label>Staż pracy (miesiące)</label>
+				<input class="form-control disabled"
+				       type="text"
+				       ng-model="vm.worker.experienceMonths"
+				       disabled="">
+			</div>
+			<div class="col-6 form-group form-group-vertical">
+				<label>Godziny pracy</label>
+				<input class="form-control disabled"
+				       type="text"
+				       ng-model="vm.worker.workedHours"
+				       disabled="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 form-group form-group-vertical">
+				<label>Dni wolne</label>
+				<input class="form-control disabled"
+				       type="text"
+				       ng-model="vm.worker.leaveDays"
+				       disabled="">
+			</div>
+			<div class="col-6 form-group form-group-vertical">
+				<label>Dni na zwolnieniu lekarskim</label>
+				<input class="form-control disabled"
+				       type="text"
+				       ng-model="vm.worker.diseaseDays"
+				       disabled="">
 			</div>
 		</div>
 	</article>
 	<footer class="col-12 no-border text-right pb-3">
-		<a class="btn btn-secondary" ui-sref="{{ vm.workersTable.getToken() }}">Anuluj</a>
+		<a class="btn btn-secondary" ui-sref="{{ vm.workersTable.getToken() }}">Powrót</a>
 		<a class="btn btn-primary" ng-click="vm.save()">Zapisz</a>
 	</footer>
 </section>

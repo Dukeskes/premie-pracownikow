@@ -6,7 +6,7 @@ angular.module(APP_ID).controller('workerController', ['$stateParams', '$state',
 
 		var vm = this;
 		vm.SpinnerKey = SpinnerKey;
-		vm.review = null;
+		vm.worker = null;
 		vm.workersTable = State.getItem(State.Token.WORKERS);
 
 		vm.getLoggedUserRole = _getLoggedUserRole;
@@ -18,9 +18,10 @@ angular.module(APP_ID).controller('workerController', ['$stateParams', '$state',
 
 		function _loadData() {
 			spinner.start(SpinnerKey.QUESTIONNAIRE);
-			workerService.getReview($stateParams.token, _getLoggedUserId())
-				.then(function(review) {
-					vm.review = review;
+			workerService.getByToken($stateParams.token)
+				.then(function(worker) {
+					vm.worker = worker;
+					console.log(worker);
 					spinner.stop(SpinnerKey.QUESTIONNAIRE);
 				});
 		}
