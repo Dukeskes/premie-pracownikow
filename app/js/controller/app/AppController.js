@@ -12,8 +12,6 @@ angular.module(APP_ID).controller('appController', ['$state', 'spinner', 'breadc
 		mouseoverIndex: -1,
 		items: [
 			State.getItem(State.Token.DASHBOARD),
-			State.getItem(State.Token.DIALOG),
-			State.getItem(State.Token.SPINNER),
 			State.getItem(State.Token.WORKERS)
 		]
 	};

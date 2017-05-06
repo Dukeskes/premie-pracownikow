@@ -1,1 +1,64 @@
-<h1>{{vm.dummy}}</h1>
+<div class="row">
+	<div class="col-6">
+		<section class="row form-elements">
+			<header class="col-3 no-pl avatar">
+				<i class="fa fa-trophy"></i>
+			</header>
+			<header class="col-9">
+				<h3>Najlepsi pracownicy</h3>
+				<p class="gray">Pracownicy wyróżnieni przez system</p>
+			</header>
+		</section>
+		<section class="row form-elements">
+			<article class="col-12 table-horizontal no-padding">
+				<table class="table"
+				       ng-table="vm.table.toNgTableParams()">
+					<thead>
+					<tr>
+						<th ng-repeat="column in vm.table.getColumns()"
+						    ng-click="vm.toggleOrder(column.id)">
+							{{column.name}}
+							<i ng-class="(column.orderType) ? ((column.orderType === 'ASC') ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc') : ''"
+							   class="fa"></i>
+						</th>
+						<th>Akcje</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="entry in $data">
+						<td ng-repeat="column in vm.table.getColumns()">
+							<p>{{entry[column.id]}}</p>
+						</td>
+						<td>
+							<div class="more more-vertical nav-hoover">
+								<span class="dot"></span>
+						<span class="dot">
+							<div class="btn-holder">
+								<div class="btn-group">
+									<a class="btn btn-primary" ng-click="vm.showWorker(entry.id)">
+										<i class="fa fa-eye"></i>
+									</a>
+								</div>
+							</div>
+						</span>
+								<span class="dot"></span>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+		</section>
+	</div>
+	<div class="col-6">
+		<section class="row form-elements">
+			<header class="col-3 no-pl avatar">
+				<i class="fa fa-bar-chart-o"></i>
+			</header>
+			<header class="col-9">
+				<h3>Statystyki systemowe</h3>
+				<p class="gray">Cały system w liczbach</p>
+			</header>
+		</section>
+	</div>
+</div>

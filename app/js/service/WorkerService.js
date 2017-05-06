@@ -7,6 +7,10 @@ angular.module(APP_ID).service('workerService', ['http', '$q', function (http, $
 		return http.post('ws/worker/entries', params);
 	};
 
+	this.fetchBest = function (params) {
+		return http.post('ws/worker/best', params);
+	};
+
 	this.fetchEntry = function (workerId) {
 		return http.get('ws/worker/' + workerId);
 	};

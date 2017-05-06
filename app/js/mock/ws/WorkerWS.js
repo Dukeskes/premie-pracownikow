@@ -30,6 +30,11 @@ angular.module(APP_ID).run(['$httpBackend', function($httpBackend) {
 		return [200, DataUtil.fetchTableData(_entries, json.offset, json.limit)];
 	});
 
+	$httpBackend.whenPOST('ws/worker/best').respond(function(method, url, data) {
+		var json = JSON.parse(data);
+		return [200, DataUtil.fetchTableData(_entries, 0, 5)];
+	});
+
 	$httpBackend.whenGET(/^ws\/worker\/[0-9]+\/token/).respond(function(method, url, data) {
 		return [ResponseCode.OK, 'l3r41ifs0p800'];
 	});
