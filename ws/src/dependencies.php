@@ -3,6 +3,7 @@
 
 require_once( __dir__ . "/../class/Worker.php" );
 require_once( __dir__ . "/../controllers/WorkerController.php" );
+require_once( __dir__ . "/../controllers/StatsController.php" );
 
 $container = $app->getContainer();
 
@@ -37,5 +38,14 @@ $container[ WorkerController :: class ] = function ($c) {
     $table = $c -> get('db') -> table('workers');
 
     return new \WorkerController($logger, $table);
+
+};
+
+$container[ StatsController :: class ] = function ($c) {
+
+    $logger = $c -> get('logger');
+    $table = $c -> get('db') -> table('stats');
+
+    return new \StatsController($logger, $table);
 
 };
