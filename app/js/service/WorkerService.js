@@ -9,7 +9,6 @@ angular.module(APP_ID).service('workerService', ['http', '$q', function(http, $q
     };
 
     this.fetchBest = function(params) {
-        console.log(http.post('ws/worker/best', params));
         return http.post('ws/worker/best', params);
     };
 
@@ -33,6 +32,11 @@ angular.module(APP_ID).service('workerService', ['http', '$q', function(http, $q
         var params = {
             reviewToken: reviewToken
         };
+
+        console.log(http.get('ws/worker/' + reviewerId + '/review', {
+            params: params
+        }));
+
         return http.get('ws/worker/' + reviewerId + '/review', {
             params: params
         });

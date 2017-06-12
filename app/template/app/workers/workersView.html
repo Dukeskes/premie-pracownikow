@@ -12,24 +12,14 @@
 </header>
 <nav class="row nav-content">
 	<ul class="nav nav-primary nav-tabs">
+	
 		<li class="nav-item">
-			<a class="nav-link">
-				<i class="fa fa-download"></i>
-				Exportuj
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link">
-				<i class="fa fa-upload"></i>
-				Importuj
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" ng-click="vm.addWorker()">
+			<a class="nav-link" ng-hide="" ng-click="vm.addWorker()">
 				<i class="fa fa-plus"></i>
 				Dodaj pracownika
 			</a>
 		</li>
+		
 	</ul>
 </nav>
 <article class="col-sm-12 table-horizontal" spinner="{{vm.SpinnerKey.TABLE}}">

@@ -1,9 +1,9 @@
 <?php
 
-class Worker extends \Illuminate\Database\Eloquent\Model {
+class Review extends \Illuminate\Database\Eloquent\Model {
 
     protected $dbConn;
-    protected $table = 'workers';
+    protected $table = 'reviews';
 
     public static function getList( $table ) {
 

@@ -54,7 +54,7 @@
 				</div>
 				<div class="row">
 					<div class="col-8 form-group form-group-vertical">
-						<label for="worker-birthdate">Data urodzenia</label>
+						<label for="worker-experienceMonths">Data urodzenia</label>
 						<input class="form-control"
 						       id="worker-birthdate"
 						       type="text"
@@ -63,6 +63,62 @@
 						       ng-model="vm.worker.birthDate"
 						       ng-class="{error: (workerDialogForm.birthDate.$invalid && (!workerDialogForm.birthDate.$pristine || vm.showErrors ))}"
 						       placeholder="25.02.2015"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-experienceMonths">Staż pracy</label>
+						<input class="form-control"
+						       id="worker-experienceMonths"
+						       type="text"
+						       aria-describedby="workerExperienceMonths"
+						       name="experienceMonths"
+						       ng-model="vm.worker.experienceMonths"
+						       ng-class="{error: (workerDialogForm.experienceMonths.$invalid && (!workerDialogForm.experienceMonths.$pristine || vm.showErrors ))}"
+						       placeholder="666"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-workedHours">Godziny pracy</label>
+						<input class="form-control"
+						       id="worker-workedHours"
+						       type="text"
+						       aria-describedby="workerWorkedHours"
+						       name="workedHours"
+						       ng-model="vm.worker.workedHours"
+						       ng-class="{error: (workerDialogForm.workedHours.$invalid && (!workerDialogForm.workedHours.$pristine || vm.showErrors ))}"
+						       placeholder="666"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-leaveDays">Dni wolne</label>
+						<input class="form-control"
+						       id="worker-leaveDays"
+						       type="text"
+						       aria-describedby="workerLeaveDays"
+						       name="leaveDays"
+						       ng-model="vm.worker.leaveDays"
+						       ng-class="{error: (workerDialogForm.leaveDays.$invalid && (!workerDialogForm.leaveDays.$pristine || vm.showErrors ))}"
+						       placeholder="666"
+						       required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8 form-group form-group-vertical">
+						<label for="worker-diseaseDays">Dni na zwolnieniu lekarskim</label>
+						<input class="form-control"
+						       id="worker-diseaseDays"
+						       type="text"
+						       aria-describedby="workerDiseaseDays"
+						       name="diseaseDays"
+						       ng-model="vm.worker.diseaseDays"
+						       ng-class="{error: (workerDialogForm.diseaseDays.$invalid && (!workerDialogForm.diseaseDays.$pristine || vm.showErrors ))}"
+						       placeholder="666"
 						       required>
 					</div>
 				</div>
