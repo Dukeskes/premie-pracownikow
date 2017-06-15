@@ -2,7 +2,11 @@
 // DIC configuration
 
 require_once( __dir__ . "/../class/Worker.php" );
+require_once( __dir__ . "/../class/Review.php" );
+
 require_once( __dir__ . "/../controllers/WorkerController.php" );
+require_once( __dir__ . "/../controllers/ReviewController.php" );
+require_once( __dir__ . "/../controllers/StatsController.php" );
 
 $container = $app->getContainer();
 
@@ -37,5 +41,23 @@ $container[ WorkerController :: class ] = function ($c) {
     $table = $c -> get('db') -> table('workers');
 
     return new \WorkerController($logger, $table);
+
+};
+
+$container[ ReviewController :: class ] = function ($c) {
+
+    $logger = $c -> get('logger');
+    $table = $c -> get('db') -> table('reviews');
+
+    return new \ReviewController($logger, $table);
+
+};
+
+$container[ StatsController :: class ] = function ($c) {
+
+    $logger = $c -> get('logger');
+    $table = $c -> get('db') -> table('stats');
+
+    return new \StatsController($logger, $table);
 
 };

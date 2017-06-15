@@ -14,19 +14,49 @@ class WorkerController {
 
     public function __invoke($request, $response, $args)
     {
+
         $widgets = $this -> table -> get();
 
         return $response;
+
     }
 
     public function getList($request, $response, $args) 
     {
 
         return $response
-            -> withHeader('Access-Control-Allow-Origin', '*')
-            -> withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            -> withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-            -> withJson( $this -> table -> get() , 200 );
+            -> withJson( array( 'entries' => $this -> table -> get() , 'numerOfAll' => count($this -> table -> get()) ) , 200 ); 
+
+    }
+
+    public function getById($request, $response, $args) 
+    {
+
+        return $response
+            -> withJson( $this->table->find( $args[ 'id' ] ) , 200 ); 
+
+    }
+
+    public function getToken($request, $response, $args)
+    {
+        
+        return Worker :: find( 7 ) -> token;
+
+    }
+
+    public function update($request, $response, $args)
+    {
+
+        $worker = Worker :: find( $request -> getParsedBody()[ 'id' ] );
+
+        $worker -> surname = $request -> getParsedBody()[ 'surname' ];
+        $worker -> birthDate = $request -> getParsedBody()[ 'birthDate' ] ? $request -> getParsedBody()[ 'birthDate' ] : '2017-05-04 16:54:49' ; 
+        $worker -> workedHours = $request -> getParsedBody()[ 'workedHours' ];
+        $worker -> experienceMonths = $request -> getParsedBody()[ 'experienceMonths' ];
+        $worker -> leaveDays = $request -> getParsedBody()[ 'leaveDays' ];
+        $worker -> diseaseDays = $request -> getParsedBody()[ 'diseaseDays' ];
+
+        $worker -> save();
 
     }
 
@@ -35,20 +65,50 @@ class WorkerController {
                 
         $worker = new Worker( $this -> table );
 
-        $worker -> imie = $request -> getParsedBody()[ 'imie' ]; 
-        $worker -> nazwisko = $request -> getParsedBody()[ 'nazwisko' ];
-        $worker -> dataUrodzenia = $request -> getParsedBody()[ 'dataUrodzenia' ] ? $request -> getParsedBody()[ 'dataUrodzenia' ] : '2017-05-04 16:54:49' ; 
-        $worker -> przepracowaneGodziny = $request -> getParsedBody()[ 'przepracowaneGodziny' ] ? $request -> getParsedBody()[ 'przepracowaneGodziny' ] : 50 ; 
-        $worker -> doswiadczenie = $request -> getParsedBody()[ 'doswiadczenie' ] ? $request -> getParsedBody()[ 'doswiadczenie' ] : 50 ; 
-        $worker -> ocenaPracownikow = $request -> getParsedBody()[ 'ocenaPracownikow' ] ? $request -> getParsedBody()[ 'ocenaPracownikow' ] : 50 ; 
-        $worker -> ocenaPM = $request -> getParsedBody()[ 'ocenaPM' ] ? $request -> getParsedBody()[ 'ocenaPM' ] : 50 ; 
-        $worker -> wskaznikPremii = $request -> getParsedBody()[ 'wskaznikPremii' ] ? $request -> getParsedBody()[ 'wskaznikPremii' ] : 50 ; 
-        $worker -> urlopy = $request -> getParsedBody()[ 'urlopy' ] ? $request -> getParsedBody()[ 'urlopy' ] : 50 ; 
-        $worker -> chorobowe = $request -> getParsedBody()[ 'chorobowe' ] ? $request -> getParsedBody()[ 'chorobowe' ] : 50 ; 
-        $worker -> terminowosc = $request -> getParsedBody()[ 'terminowosc' ] ? $request -> getParsedBody()[ 'terminowosc' ] : 50 ; 
-        $worker -> efektywnosc = $request -> getParsedBody()[ 'efektywnosc' ] ? $request -> getParsedBody()[ 'efektywnosc' ] : 50 ;
+        $worker -> name = $request -> getParsedBody()[ 'name' ]; 
+        $worker -> token = $this -> generateToken(); 
+        $worker -> role = 'USER'; 
+        $worker -> surname = $request -> getParsedBody()[ 'surname' ];
+        $worker -> birthDate = $request -> getParsedBody()[ 'birthDate' ] ? $request -> getParsedBody()[ 'birthDate' ] : '2017-05-04 16:54:49' ; 
+        $worker -> workedHours = $request -> getParsedBody()[ 'workedHours' ];
+        $worker -> experienceMonths = $request -> getParsedBody()[ 'experienceMonths' ];
+        $worker -> leaveDays = $request -> getParsedBody()[ 'leaveDays' ];
+        $worker -> diseaseDays = $request -> getParsedBody()[ 'diseaseDays' ];
 
         $worker -> save();
+
+    }
+
+    public function auth($request, $response, $args) 
+    {
+
+        $fullName = explode( '.' , $request -> getParsedBody()[ 'login' ] );
+
+        $User = Worker :: where( 'name' , 'LIKE' , $fullName[ 0 ] ) -> where( 'surname' , 'LIKE' , $fullName[ 1 ] ) -> first();       
+
+        return $response
+            -> withJson( array( 'id' => $User -> id , 'role' => $User -> role , 'authToken' => $User -> token , 'username' => $User -> name . ' ' . $User -> surname ) , 200 );             
+
+    }
+
+    public function logout($request, $response, $args) 
+    {
+        
+        return $response -> withJson( array('logout' => true) , 200 );          
+
+    }
+
+    private function generateToken() 
+    {
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 12; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomString;
 
     }
 
