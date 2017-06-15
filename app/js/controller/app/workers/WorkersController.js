@@ -1,4 +1,4 @@
-angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', '$state', '$window', 'workerService', 'workerDialog',
+angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', '$state', '$window', 'authService', 'workerService', 'workerDialog',
 	function (tableBuilder, spinner, $state, $window, authService, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
