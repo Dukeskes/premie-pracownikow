@@ -86,25 +86,25 @@
 				</div>
 			</div>
 			<div class="col-6 form-group form-group-vertical">
-				<label>Ogólna ocena menadżerów</label>
+				<label>Średnia ocena pracowników</label>
 				<div class="rate-buttons">
 					<label class="button-star">
 						<i class="fa fa-star rate-star-indicator"></i>
 					</label>
 					<label class="button-star">
-						<i ng-class="{'fa-star-o': vm.worker.pmRate < 25, 'fa-star': vm.worker.pmRate >= 25}"
+						<i ng-class="{'fa-star-o': vm.worker.summaryRate < 25, 'fa-star': vm.worker.pmRate >= 25}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 					<label class="button-star">
-						<i ng-class="{'fa-star-o': vm.worker.pmRate < 50, 'fa-star': vm.worker.pmRate >= 50}"
+						<i ng-class="{'fa-star-o': vm.worker.summaryRate < 50, 'fa-star': vm.worker.pmRate >= 50}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 					<label class="button-star">
-						<i ng-class="{'fa-star-o': vm.worker.pmRate < 75, 'fa-star': vm.worker.pmRate >= 75}"
+						<i ng-class="{'fa-star-o': vm.worker.summaryRate < 75, 'fa-star': vm.worker.pmRate >= 75}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 					<label class="button-star">
-						<i ng-class="{'fa-star-o': vm.worker.pmRate < 100, 'fa-star': vm.worker.pmRate >= 100}"
+						<i ng-class="{'fa-star-o': vm.worker.summaryRate < 100, 'fa-star': vm.worker.pmRate >= 100}"
 						   class="fa rate-star-indicator"></i>
 					</label>
 				</div>
