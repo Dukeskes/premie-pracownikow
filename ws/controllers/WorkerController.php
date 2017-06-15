@@ -44,6 +44,17 @@ class WorkerController {
 
     }
 
+    public function getByToken($request, $response, $args)
+    {
+
+        $worker = Worker :: where( 'token' , $args[ 'token' ] ) -> first();
+
+        $worker = $this -> getWorkerReviews( $worker );
+
+        return $response -> withJson( $worker , 200);
+
+    }
+
     public function update($request, $response, $args)
     {
 
@@ -63,7 +74,7 @@ class WorkerController {
     public function add($request, $response, $args) 
     {
                 
-        $worker = new Worker( $this -> table );
+        $worker = new Worker();
 
         $worker -> name = $request -> getParsedBody()[ 'name' ]; 
         $worker -> token = $this -> generateToken(); 
@@ -109,6 +120,37 @@ class WorkerController {
         }
 
         return $randomString;
+
+    }
+
+    private function getWorkerReviews( $worker )
+    {
+
+        $reviews = Review :: where( 'workerID' , $worker -> id ) -> get();
+
+        $countEfficiency = 0;
+        $countPunctuality = 0;
+        $countUserRate = 0;
+        
+        foreach ($reviews as $reviewId => $review) {
+
+            $countEfficiency += $review -> efficiency;
+            $countPunctuality += $review -> punctuality;
+            $countUserRate += $review -> userRate;
+
+        }
+
+        $worker -> efficiency = $countEfficiency / count($reviews);
+        $worker -> punctuality = $countPunctuality / count($reviews);
+        $worker -> workersRate = $countUserRate / count($reviews);
+        $worker -> pmRate = ( $worker -> efficiency + $worker -> punctuality + $worker -> workersRate ) / 3;
+
+        $worker -> bonusRate = 0;
+
+        if( $worker -> pmRate > 50 )
+            $worker -> bonusRate = ( $worker -> pmRate - 50 ) / 2;
+
+        return $worker;        
 
     }
 
