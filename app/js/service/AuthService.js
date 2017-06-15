@@ -16,8 +16,6 @@ angular.module(APP_ID).service('authService', ['$http', 'http', '$cookies', func
             .resolve(function(response) {
                 var userPrincipal = response.data;
 
-                console.log(response);
-
                 $http.defaults.headers.common[CookieToken.AUTH] = userPrincipal.token;
                 $cookies.put(CookieToken.ID, userPrincipal.id);
                 $cookies.put(CookieToken.AUTH, userPrincipal.token);

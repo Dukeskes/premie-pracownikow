@@ -11,6 +11,7 @@ $app -> get( '/worker/{id}', \WorkerController :: class . ':getById' );
 $app -> get( '/worker/{id}/token', \WorkerController :: class . ':getToken' );
 
 $app -> get( '/worker/{workerId}/review' , \ReviewController :: class . ':review' );
+$app -> put( '/review' , \ReviewController :: class . ':updateReview' );
 
 $app -> post( '/auth/logIn', \WorkerController :: class . ':auth' );
 $app -> post( '/auth/logOut', \WorkerController :: class . ':logout' );

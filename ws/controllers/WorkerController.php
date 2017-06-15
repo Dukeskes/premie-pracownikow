@@ -40,7 +40,7 @@ class WorkerController {
     public function getToken($request, $response, $args)
     {
         
-        return Worker :: find( 7 ) -> token;
+        return Worker :: find( $args[ 'id' ] ) -> token;
 
     }
 
