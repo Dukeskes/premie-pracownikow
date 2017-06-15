@@ -77,9 +77,10 @@ class WorkerController {
         $worker = new Worker();
 
         $worker -> name = $request -> getParsedBody()[ 'name' ]; 
-        $worker -> token = $this -> generateToken(); 
+        $worker -> token = $this -> generateToken();
         $worker -> role = 'USER'; 
         $worker -> surname = $request -> getParsedBody()[ 'surname' ];
+        $worker -> username = strtolower( $worker -> name ) . '.' . strtolower( $worker -> surname ); 
         $worker -> birthDate = $request -> getParsedBody()[ 'birthDate' ] ? $request -> getParsedBody()[ 'birthDate' ] : '2017-05-04 16:54:49' ; 
         $worker -> workedHours = $request -> getParsedBody()[ 'workedHours' ];
         $worker -> experienceMonths = $request -> getParsedBody()[ 'experienceMonths' ];
@@ -98,7 +99,7 @@ class WorkerController {
         $User = Worker :: where( 'name' , 'LIKE' , $fullName[ 0 ] ) -> where( 'surname' , 'LIKE' , $fullName[ 1 ] ) -> first();       
 
         return $response
-            -> withJson( array( 'id' => $User -> id , 'role' => $User -> role , 'authToken' => $User -> token , 'username' => $User -> name . ' ' . $User -> surname ) , 200 );             
+            -> withJson( array( 'id' => $User -> id , 'role' => $User -> role , 'authToken' => $User -> token , 'name' => $User -> username ) , 200 );             
 
     }
 
