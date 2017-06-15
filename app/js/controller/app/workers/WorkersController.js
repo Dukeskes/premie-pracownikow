@@ -1,5 +1,5 @@
 angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner', '$state', '$window', 'workerService', 'workerDialog',
-	function (tableBuilder, spinner, $state, $window, workerService, workerDialog) {
+	function (tableBuilder, spinner, $state, $window, authService, workerService, workerDialog) {
 		var SpinnerKey = {
 			TABLE: 'TABLE_TABLE'
 		};
@@ -16,6 +16,7 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 		vm.loadData = _loadData;
 		vm.showQuestionnaire = _showQuestionnaire;
 		vm.showWorker = _showWorker;
+		vm.isAddUserAvailable = _isAddUserAvailable;
 
 		(function _init() {
 			_loadData();
@@ -50,6 +51,19 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 				_loadData();
 				spinner.stop(SpinnerKey.TABLE);
 			});
+		}
+
+		function _isAddUserAvailable() {
+			if(_getLoggedUserRole() != Role.USER) {
+				console.log('tak');
+				return true;
+			}
+			console.log('nie');
+			return false;
+		}
+
+		function _getLoggedUserRole() {
+			return authService.getRole();
 		}
 
 		function _showQuestionnaire(workerId) {
