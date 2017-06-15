@@ -143,12 +143,12 @@ class WorkerController {
         $worker -> efficiency = $countEfficiency / count($reviews);
         $worker -> punctuality = $countPunctuality / count($reviews);
         $worker -> workersRate = $countUserRate / count($reviews);
-        $worker -> pmRate = ( $worker -> efficiency + $worker -> punctuality + $worker -> workersRate ) / 3;
+        $worker -> summaryRate = ( $worker -> efficiency + $worker -> punctuality + $worker -> workersRate ) / 3;
 
         $worker -> bonusRate = 0;
 
-        if( $worker -> pmRate > 50 )
-            $worker -> bonusRate = ( $worker -> pmRate - 50 ) / 2;
+        if( $worker -> summaryRate > 50 )
+            $worker -> bonusRate = ( $worker -> summaryRate - 50 ) / 2;
 
         return $worker;        
 
