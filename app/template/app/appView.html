@@ -16,9 +16,7 @@
 			    ng-repeat="item in vm.menu.items"
 			    ui-sref-active="active"
 			    ng-click="vm.menu.activeIndex = $index"
-			    ng-class="vm.getMenuItemClass($index)"
-			    ng-mouseenter="vm.menu.mouseoverIndex=$index"
-			    ng-mouseleave="vm.menu.mouseoverIndex=-1">
+			    ng-class="vm.getMenuItemClass($index)">
 				<a class="nav-link"
 				   ui-sref="{{item.getToken()}}"
 				   ui-sref-opts="{reload:true}">{{item.getName() | translate}}</a>

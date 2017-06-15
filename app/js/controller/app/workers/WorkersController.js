@@ -55,10 +55,8 @@ angular.module(APP_ID).controller('workersController', ['tableBuilder', 'spinner
 
 		function _isAddUserAvailable() {
 			if(_getLoggedUserRole() != Role.USER) {
-				console.log('tak');
 				return true;
 			}
-			console.log('nie');
 			return false;
 		}
 
