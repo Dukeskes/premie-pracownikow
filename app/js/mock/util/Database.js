@@ -12,7 +12,7 @@ Database.workers = [];
 
 (function _initWorkers() {
 	for (var i = 1; i < RandomData.int(5, 50); i++) {
-		Database.workers.push(
+			Database.workers.push(
 			new Worker(
 				i,
 				RandomData.token(i),
