@@ -67,6 +67,7 @@ class WorkerController {
 
         $worker -> name = $request -> getParsedBody()[ 'name' ]; 
         $worker -> token = $this -> generateToken(); 
+        $worker -> role = 'USER'; 
         $worker -> surname = $request -> getParsedBody()[ 'surname' ];
         $worker -> birthDate = $request -> getParsedBody()[ 'birthDate' ] ? $request -> getParsedBody()[ 'birthDate' ] : '2017-05-04 16:54:49' ; 
         $worker -> workedHours = $request -> getParsedBody()[ 'workedHours' ];
@@ -81,8 +82,19 @@ class WorkerController {
     public function auth($request, $response, $args) 
     {
 
+        $fullName = explode( '.' , $request -> getParsedBody()[ 'login' ] );
+
+        $User = Worker :: where( 'name' , 'LIKE' , $fullName[ 0 ] ) -> where( 'surname' , 'LIKE' , $fullName[ 1 ] ) -> first();       
+
         return $response
-            -> withJson( array( 'id' => 3 , 'role' => 'ADMIN' , 'authToken' => $this -> generateToken() , 'username' => 'dupa' ) , 200 );             
+            -> withJson( array( 'id' => $User -> id , 'role' => $User -> role , 'authToken' => $User -> token , 'username' => $User -> name . ' ' . $User -> surname ) , 200 );             
+
+    }
+
+    public function logout($request, $response, $args) 
+    {
+        
+        return $response -> withJson( array('logout' => true) , 200 );          
 
     }
 

@@ -49,11 +49,6 @@ angular.module(APP_ID).run(['$httpBackend', function($httpBackend) {
         }
     });
 
-    $httpBackend.whenGET(/^ws\/worker\/([0-9]+)\/review\?w*/).respond(function(method, url, data) {
-        var review = Database.reviews[RandomData.int(1, Database.reviews.length - 1)];
-        return [ResponseCode.OK, review];
-    });
-
 
     $httpBackend.whenPUT('ws/worker').respond(function(method, url, data) {
         var json = JSON.parse(data);

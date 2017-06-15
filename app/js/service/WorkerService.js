@@ -28,20 +28,6 @@ angular.module(APP_ID).service('workerService', ['http', '$q', function(http, $q
         return http.get('ws/worker/byToken/' + token);
     };
 
-    this.getReview = function(reviewToken, reviewerId) {
-        var params = {
-            reviewToken: reviewToken
-        };
-
-        console.log(http.get('ws/worker/' + reviewerId + '/review', {
-            params: params
-        }));
-
-        return http.get('ws/worker/' + reviewerId + '/review', {
-            params: params
-        });
-    };
-
     this.update = function(worker) {
         return http.put('ws/worker', worker);
     };

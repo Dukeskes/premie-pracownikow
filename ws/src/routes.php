@@ -13,6 +13,7 @@ $app -> get( '/worker/{id}/token', \WorkerController :: class . ':getToken' );
 $app -> get( '/worker/{workerId}/review' , \ReviewController :: class . ':review' );
 
 $app -> post( '/auth/logIn', \WorkerController :: class . ':auth' );
+$app -> post( '/auth/logOut', \WorkerController :: class . ':logout' );
 
 $app->get('/[{name}]', function ($request, $response, $args) {
     // Sample log message
