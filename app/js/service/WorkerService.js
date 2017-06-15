@@ -1,39 +1,39 @@
-angular.module(APP_ID).service('workerService', ['http', '$q', function(http, $q) {
+angular.module(APP_ID).service('workerService', ['http', '$q', function (http, $q) {
 
-    this.create = function(worker) {
-        return http.post('ws/worker', worker);
-    };
+	this.create = function (worker) {
+		return http.post('ws/worker', worker);
+	};
 
-    this.fetchEntries = function(params) {
-        return http.post('ws/worker/entries', params);
-    };
+	this.fetchEntries = function (params) {
+		return http.post('ws/worker/entries', params);
+	};
 
-    this.fetchBest = function(params) {
-        return http.post('ws/worker/best', params);
-    };
+	this.fetchBest = function (params) {
+		return http.post('ws/worker/best', params);
+	};
 
-    this.fetchEntry = function(workerId) {
-        return http.get('ws/worker/' + workerId);
-    };
+	this.fetchEntry = function (workerId) {
+		return http.get('ws/worker/' + workerId);
+	};
 
-    this.getWorkerToken = function(workerId) {
-        return http.get('ws/worker/' + workerId + '/token', {
-            transformResponse: function(data) {
-                return data;
-            }
-        });
-    };
+	this.getWorkerToken = function (workerId) {
+		return http.get('ws/worker/' + workerId + '/token', {
+			transformResponse: function (data) {
+				return data;
+			}
+		});
+	};
 
-    this.getByToken = function(token) {
-        return http.get('ws/worker/byToken/' + token);
-    };
+	this.getByToken = function (token) {
+		return http.get('ws/worker/byToken/' + token);
+	};
 
-    this.update = function(worker) {
-        return http.put('ws/worker', worker);
-    };
+	this.update = function (worker) {
+		return http.put('ws/worker', worker);
+	};
 
-    this.delete = function(workerId) {
-        return http.delete('ws/worker/' + workerId);
-    };
+	this.delete = function (workerId) {
+		return http.delete('ws/worker/' + workerId);
+	};
 
 }]);
