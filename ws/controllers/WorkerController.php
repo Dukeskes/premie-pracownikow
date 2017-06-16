@@ -29,6 +29,28 @@ class WorkerController {
 
     }
 
+    public function getBest($request, $response, $args) 
+    {
+
+        $workers = Worker :: all() -> toArray();
+
+        foreach ($workers as $key => $worker)            
+            $workers[$key] = $this -> getWorkerReviews( $worker );
+
+        usort( $workers , function($a, $b) {
+
+            if ($a['bonusRate'] == $b['bonusRate'])
+                return 0;
+
+            return ($a['bonusRate'] < $b['bonusRate']) ? 1 : -1;
+
+        });
+
+        return $response
+            -> withJson( array( 'entries' => array_slice($workers, 0, 15) , 'numerOfAll' => count($workers) ) , 200 ); 
+
+    }
+
     public function getById($request, $response, $args) 
     {
 
@@ -127,7 +149,7 @@ class WorkerController {
     private function getWorkerReviews( $worker )
     {
 
-        $reviews = Review :: where( 'workerID' , $worker -> id ) -> get();
+        $reviews = Review :: where( 'workerID' , $worker['id'] ) -> get();
 
         $countEfficiency = 0;
         $countPunctuality = 0;
@@ -141,17 +163,77 @@ class WorkerController {
 
         }
 
-        $worker -> efficiency = $countEfficiency / count($reviews);
-        $worker -> punctuality = $countPunctuality / count($reviews);
-        $worker -> workersRate = $countUserRate / count($reviews);
-        $worker -> summaryRate = ( $worker -> efficiency + $worker -> punctuality + $worker -> workersRate ) / 3;
+        $worker['efficiency'] = $countEfficiency / count($reviews);
+        $worker['punctuality'] = $countPunctuality / count($reviews);
+        $worker['workersRate'] = $countUserRate / count($reviews);
+        $worker['summaryRate'] = ( $worker['efficiency'] + $worker['punctuality'] + $worker['workersRate'] ) / 3;
 
-        $worker -> bonusRate = 0;
+        $worker['bonusRate'] = 0;
 
-        if( $worker -> summaryRate > 50 )
-            $worker -> bonusRate = ( $worker -> summaryRate - 50 ) / 2;
+        if( $worker['summaryRate'] > 50 )
+            $worker['bonusRate'] = ceil(( $worker['summaryRate'] - 50 ) / 2);
 
         return $worker;        
+
+    }
+
+    public function generate($request, $response, $args) 
+    {
+
+        $names = array(
+            'Christopher',
+            'Ryan',
+            'Ethan',
+            'John',
+            'Zoey',
+            'Sarah',
+            'Michelle',
+            'Samantha',
+            'Sabina',
+            'Oskar',
+            'Bartlomiej',
+            'Marcin'
+        );
+        
+        $surnames = array(
+            'Walker',
+            'Thompson',
+            'Anderson',
+            'Johnson',
+            'Tremblay',
+            'Peltier',
+            'Cunningham',
+            'Simpson',
+            'Mercado',
+            'Sellers',
+            'Golonka',
+            'Chajdas',
+            'Duda',
+            'Nowak'
+        );   
+        
+        foreach ($names as $name) {
+            
+            foreach ($surnames as $surname) {
+            
+                $worker = new Worker();
+
+                $worker -> name = $name; 
+                $worker -> token = $this -> generateToken();
+                $worker -> role = 'USER'; 
+                $worker -> surname = $surname;
+                $worker -> username = strtolower( $worker -> name ) . '.' . strtolower( $worker -> surname ); 
+                $worker -> birthDate = date("d M Y", mt_rand(1, time()));
+                $worker -> workedHours = rand( 0 , 200 );
+                $worker -> experienceMonths = rand( 0 , 200 );
+                $worker -> leaveDays = rand( 0 , 60 );
+                $worker -> diseaseDays = rand( 0 , 60 );
+
+                $worker -> save();
+
+            }
+
+        }
 
     }
 

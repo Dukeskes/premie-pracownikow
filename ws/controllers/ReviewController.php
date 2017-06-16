@@ -70,5 +70,34 @@ class ReviewController {
         $review -> save();
 
     }
+    
+    public function generate($request, $response, $args) 
+    {
+
+        $workers = Worker :: all();
+
+        foreach ($workers as $worker) {
+            
+            foreach ($workers as $reviewer) {
+                
+                if( $worker -> id == $reviewer -> id )
+                    continue;
+
+                $review = new Review();
+
+                $review -> reviewerID = $reviewer -> id;
+                $review -> workerID = $worker -> id;
+
+                $review -> efficiency = rand( 0 , 100 );
+                $review -> punctuality = rand( 0 , 100 );
+                $review -> userRate = rand( 0 , 100 );
+
+                $review -> save();
+
+            }
+
+        }
+
+    }
 
 }

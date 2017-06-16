@@ -25,12 +25,12 @@ class StatsController {
         $stats = array( 
             'avgRatePm' => 89,
             'avgRateWorkers' => 92,
-            'biggestBonus' => 35,
+            'biggestBonus' => 25,
             'increaseEfficiency' => 17,
             'increasePunctuality' => 22,
             'mostPopularName' => "Marcin",
-            'reviewsCount' => 46516,
-            'workersCount' => 2195
+            'reviewsCount' => count( Review :: all() ) ,
+            'workersCount' => count( Worker :: all() )
         );
 
         return $response -> withJson( $stats , 200 ); 
