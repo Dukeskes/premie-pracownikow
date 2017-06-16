@@ -59,6 +59,15 @@ class WorkerController {
 
     }
 
+    public function removeById($request, $response, $args)
+    {
+
+        Worker :: destroy( $args[ 'id' ] );
+
+        return $response;
+
+    }
+
     public function getToken($request, $response, $args)
     {
         

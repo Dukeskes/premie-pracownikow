@@ -8,6 +8,7 @@ $app -> post( '/worker/best' , \WorkerController :: class . ':getBest' );
 $app -> post( '/worker' , \WorkerController :: class . ':add' );
 $app -> put( '/worker' , \WorkerController :: class . ':update' );
 $app -> get( '/worker/{id}', \WorkerController :: class . ':getById' );
+$app -> delete( '/worker/{id}', \WorkerController :: class . ':removeById' );
 $app -> get( '/worker/{id}/token', \WorkerController :: class . ':getToken' );
 $app -> get( '/worker/byToken/{token}' , \WorkerController :: class . ':getByToken' );
 
